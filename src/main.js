@@ -17,4 +17,4 @@ for (const iconName in ElIcons) {
 app.config.globalProperties.$echarts = echarts
 
 app.use(ElementPlus).use(Router).mount('#app')
-console.log(Router)
+console.log("路由",Router)

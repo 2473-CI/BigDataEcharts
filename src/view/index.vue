@@ -1,8 +1,6 @@
 <template>
     <div class="context">
 
-
-
         <div class="box">
             <el-card  shadow="hover" :body-style="{ padding: '0px' }">
             <img
@@ -36,6 +34,21 @@
             </el-card>
         </div>
 
+        <div class="box">
+            <el-card  shadow="hover" :body-style="{ padding: '0px' }">
+            <img
+                src="@/assets/QS.jpg"
+                class="image"
+            />
+            <div style="padding: 14px">
+                <span>QS世界排名大学(2018-2022)</span>
+                <div class="bottom">
+                <time class="time">2023/02/02</time>
+                <el-button text class="button" @click="this.$router.push('/qs')">查看</el-button>
+                </div>
+            </div>
+            </el-card>
+        </div>
 
     </div>
 </template>
