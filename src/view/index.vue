@@ -65,6 +65,22 @@
             </div>
             </el-card>
         </div>
+
+        <div class="box">
+            <el-card  shadow="hover" :body-style="{ padding: '0px' }">
+            <img
+                src="@/assets/ST.jpg"
+                class="image"
+            />
+            <div style="padding: 14px">
+                <span>学生在考试中的表现</span>
+                <div class="bottom">
+                <time class="time">2023/02/03</time>
+                <el-button text class="button" @click="this.$router.push('/st')">查看</el-button>
+                </div>
+            </div>
+            </el-card>
+        </div>
     </div>
 </template>
 

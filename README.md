@@ -181,3 +181,31 @@ curl --location --request POST 'http://192.168.10.109:8999/Youtube' \
     },
 ]
 ```
+
+
+### 
+### 学生考试情况
+
+#### 接口地址
+
+```
+curl --location --request GET 'http://192.168.10.109:8999/Student'
+```
+
+#### 接口数据
+
+```json
+[
+    {
+        "gender": "male",
+        "lunch": "free/reduced",
+        "math score": "64",
+        "parental level of education": "high school",
+        "race/ethnicity": "group D",
+        "reading score": "64",
+        "test preparation course": "completed",
+        "writing score": "67"
+    },
+]
+```
+
