@@ -132,3 +132,52 @@ curl --location --request GET 'http://127.0.0.1:8999/machine/getIndustrial' \
 ```
 
 ### 
+### 查看QS世界大学排名数据
+
+#### 接口地址
+
+```
+curl --location --request GET 'http://192.168.10.109:8082/api/QSWorldRankingUniversity'
+```
+
+#### 接口数据
+
+```json
+[
+    {
+        "City": "Cambridge",
+        "Country": "United States",
+        "Name": "Harvard University",
+        "Point": "97.7",
+        "Rank": "1",
+        "Year": "2018"
+    },
+]
+```
+
+### 
+### YouTube的受欢迎程度
+
+#### 接口地址
+
+```
+curl --location --request POST 'http://192.168.10.109:8999/Youtube' \
+--header 'Content-Type: application/json' \
+--data-raw '{"StartRank":1,"EndRank":1000}'
+```
+
+#### 接口数据
+
+```json
+[
+    {
+        "Category": "Film & Animation",
+        "Rank": "2",
+        "Started": "2015",
+        "Subscribers": "161,000,000",
+        "Video Count": "0",
+        "Video Views": "0",
+        "Youtube Channel": "YouTube Movies"
+    },
+]
+```

@@ -50,6 +50,21 @@
             </el-card>
         </div>
 
+        <div class="box">
+            <el-card  shadow="hover" :body-style="{ padding: '0px' }">
+            <img
+                src="@/assets/YT.jpg"
+                class="image"
+            />
+            <div style="padding: 14px">
+                <span>Youtube受欢迎的频道</span>
+                <div class="bottom">
+                <time class="time">2023/02/02</time>
+                <el-button text class="button" @click="this.$router.push('/yt')">查看</el-button>
+                </div>
+            </div>
+            </el-card>
+        </div>
     </div>
 </template>
 
@@ -69,11 +84,12 @@ export default {
     height: 100vh;
     align-items: center;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .box{
     width: 300px;
-    height: 600px;
+    /* height: 600px; */
 }
 .time {
   font-size: 12px;
