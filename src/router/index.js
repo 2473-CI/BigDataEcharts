@@ -5,6 +5,7 @@ import gy from '@/view/gy'
 import qs from '@/view/qs'
 import yt from '@/view/yt'
 import st from '@/view/st'
+import sex from '@/view/sex'
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -31,6 +32,10 @@ const router = createRouter({
         { 
             path: '/st',
             component: st 
+        },
+        { 
+            path: '/sex',
+            component: sex 
         },
       ]
   })

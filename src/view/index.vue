@@ -81,6 +81,22 @@
             </div>
             </el-card>
         </div>
+
+        <div class="box">
+            <el-card  shadow="hover" :body-style="{ padding: '0px' }">
+            <img
+                src="@/assets/Sex.png"
+                class="image"
+            />
+            <div style="padding: 14px">
+                <span>关于性犯罪者的数据分析</span>
+                <div class="bottom">
+                <time class="time">2023/02/05</time>
+                <el-button text class="button" @click="this.$router.push('/sex')">查看</el-button>
+                </div>
+            </div>
+            </el-card>
+        </div>
     </div>
 </template>
 
