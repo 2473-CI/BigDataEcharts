@@ -299,8 +299,10 @@ onMounted(async ()=> {
 
 
     }
+    console.log("图5", opt5)
     plot5.setOption(opt5)
 
+    
 
 })
 

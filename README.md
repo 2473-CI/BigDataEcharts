@@ -209,3 +209,54 @@ curl --location --request GET 'http://192.168.10.109:8999/Student'
 ]
 ```
 
+### 
+### 性犯罪者登记处
+
+#### 接口地址
+
+```
+curl --location --request GET 'http://192.168.10.109:8999/Sex'
+```
+
+#### 接口数据
+
+```json
+[
+  {
+    "ADDDATE": "2021/12/22 16:03:10+00",  添加日期
+    "ALIASES": "RONALD  WYN / BOY  WYNN",  别名
+    "BIRTHDATE": "1957/01/07 05:00:00+00", 生日
+    "BLOCKNAME": "5300 BLOCK C STREET SE", 区块名称
+    "BLOCK_X": "406505", BLOCK_X
+    "BLOCK_Y": "135194", BLOCK_Y
+    "CREATED": "", 
+    "CREATOR": "", 
+    "DCS_LAST_MOD_DTM": "2022/11/15 11:10:37+00", 
+    "DISTRICT": "6", 区
+    "EDITED": "", 
+    "EDITOR": "", 
+    "EYECOLOR": "BROWN",  眼睛颜色
+    "FIRSTNAME": "RONALD", 名
+    "GIS_ID": "", 
+    "GLOBALID": "{ED8167D4-D37B-5038-E053-792F520A2494}",  全球ID
+    "HAIRCOLOR": "BLACK", 发色
+    "HEIGHTNUM": "68", 身高
+    "LASTNAME": "WYNN", 姓氏
+    "LATITUDE": "38.884557", 纬度
+    "LONGITUDE": "-76.925021", 经度
+    "MARKINGS": "", 标记
+    "MAXCLASSIFICATION": "A", 最大分类
+    "OBJECTID": "1095037", 对象标识
+    "PSA": "604", 
+    "QUADRANT": "SE", 
+    "REGISTRATIONDATE": "2022/01/12 05:00:00+00", 
+    "SEXOFFENDERCODE": "004-366", 性犯罪者代码
+    "TYPE": "HOME", 犯罪场所
+    "WEIGHTNUM": "180", 体重
+    "X": "-76.9250275843539", 
+    "Y": "38.8845676858294", 
+    "ZIPCODE": "20019" 邮编
+  }
+    
+]
+```

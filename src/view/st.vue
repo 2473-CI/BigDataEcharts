@@ -88,6 +88,21 @@ onMounted(async () => {
     }
     polt2.setOption(opt2)
 
+
+
+
+
+
+//----------------------------------------------------------------------------
+
+
+    
+
+
+
+
+
+
     // 众数
     function zs(arr){
         arr = arr.map(it => it+"")
@@ -105,16 +120,68 @@ onMounted(async () => {
         return Number(res[0]["name"]) 
     }
 
+    let parental_level_of_education = []
+    data.forEach(element => {
+        if(!parental_level_of_education.includes(element["parental level of education"]))
+        {parental_level_of_education.push(element["parental level of education"])}
+    });
+
+    let indicator = []
+    parental_level_of_education.forEach(element => {
+        indicator.push({
+            name: element
+        })
+    });
+
+    let indicatorMap = parental_level_of_education.map(name => data.filter(it => it["parental level of education"] == name))
+
+    let legend = ["math", "reading", "writing"]
+
     let plot3 = echarts.init(s3.value)
     let opt3 = {
         title: {
             text: "父母受教育水平对三科成的影响(雷达)",
             left: "center",
             top: "3%"
-        }
+        },
+        legend: {
+            data:["math", "reading", "writing"],
+        },
+        radar:{
+            indicator:indicator
+        },
+        series:[
+            {
+            type: 'radar',
+            data: legend.map(end => {
+                    return {
+                        name: end,
+                        value: indicatorMap.map(it => zs(it.map(it => it[end + " score"])))
+                    }
+                })
+            }
+        ]
+        
+        
+        
+
     }
     plot3.setOption(opt3)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+//----------------------------------------------------------------------------
 
     function isCoress(arr){
         let count = 0
@@ -200,7 +267,6 @@ onMounted(async () => {
         for(let it of arr) t[it] ++ ;
         return t;
     }
-    console.log( SourceCount(data.map(it => Number(it["math score"]))))
 
     let x = []
     for(let i = 0; i < 101; i++) x.push(i)
