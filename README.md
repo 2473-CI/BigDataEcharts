@@ -277,129 +277,130 @@ curl --location --request GET 'http://192.168.10.109:8999/keep'
 ```json
 [
     {
-		" Sex ratio of the total population (females per 1,000 males)": "973",
-		"All women age 15-19 years who are anaemic22 (%)": "48.0",
-		"All women age 15-49 years who are anaemic22 (%)": "38.3",
+        "District Names": "Nicobars", 地区名称
+        "State/UT": "Andaman & Nicobar Islands", 州/中央直辖区
+        "Number of Households surveyed": "882", 受访住户数
+		"Number of Men age 15-54 years interviewed": "125", 接受采访的15-54岁男性人数
+		"Number of Women age 15-49 years interviewed": "764", 接受采访的15-49岁女性人数
+		" Sex ratio of the total population (females per 1,000 males)": "973",  总人口的性别比例（每1 000名男性中有女性）
+		"All women age 15-19 years who are anaemic22 (%)": "48.0",  所有 15-19 岁贫血的女性22 （%）
+		"All women age 15-49 years who are anaemic22 (%)": "38.3",  所有 15-49 岁贫血的女性22 （%）
 		"Average out-of-pocket expenditure per delivery in a public health facility (for last birth in the 5 years before the survey) (Rs": {
-			")": "2278"
+			")": "2278" 每次分娩的自付费用
 		},
-		"Births attended by skilled health personnel (in the 5 years before the survey)10 (%)": "98.6",
-		"Births delivered by caesarean section (in the 5 years before the survey) (%)": "11.5",
+		"Births attended by skilled health personnel (in the 5 years before the survey)10 (%)": "98.6", 由熟练卫生人员接生（调查前5年）
+		"Births delivered by caesarean section (in the 5 years before the survey) (%)": "11.5", 剖腹产分娩（调查前5年）
 		"Births in a private health facility that were delivered by caesarean section (in the 5 years before the survey) (%)": "",
 		"Births in a public health facility that were delivered by caesarean section (in the 5 years before the survey) (%)": "10.7",
-		"Births in the 5 years preceding the survey that are third or higher order (%)": "0.0",
-		"Breastfeeding children age 6-23 months receiving an adequate diet16, 17  (%)": "(19.4)",
-		"Children Prevalence of symptoms of acute respiratory infection (ARI) in the 2 weeks preceding the survey (Children under age 5 years) (%)": "1.8",
-		"Children age 12-23 months fully vaccinated based on information from either vaccination card or mother's recall11 (%)": "(64.2)",
-		"Children age 12-23 months fully vaccinated based on information from vaccination card only12 (%)": "(94.1)",
-		"Children age 12-23 months who have received 3 doses of penta or DPT vaccine (%)": "(71.9)",
-		"Children age 12-23 months who have received 3 doses of penta or hepatitis B vaccine (%)": "(68.6)",
-		"Children age 12-23 months who have received 3 doses of polio vaccine13 (%)": "(69.1)",
-		"Children age 12-23 months who have received 3 doses of rotavirus vaccine14 (%)": "(3.1)",
-		"Children age 12-23 months who have received BCG (%)": "(80.4)",
-		"Children age 12-23 months who have received the first dose of measles-containing vaccine (MCV) (%)": "(67.3)",
-		"Children age 12-23 months who received most of their vaccinations in a private health facility (%)": "(0.0)",
-		"Children age 12-23 months who received most of their vaccinations in a public health facility (%)": "(100.0)",
-		"Children age 24-35 months who have received a second dose of measles-containing vaccine (MCV) (%)": "(20.7)",
-		"Children age 5 years who attended pre-primary school during the school year 2019-20 (%)": "(29.5)",
-		"Children age 6-59 months who are anaemic (<11": {
+		"Births in the 5 years preceding the survey that are third or higher order (%)": "0.0", 调查前5年内出生率为三级或三级以上（%）
+		"Breastfeeding children age 6-23 months receiving an adequate diet16, 17  (%)": "(19.4)", 接受充足饮食的6-23个月母乳喂养儿童16， 17 （%）
+		"Children Prevalence of symptoms of acute respiratory infection (ARI) in the 2 weeks preceding the survey (Children under age 5 years) (%)": "1.8", 儿童 调查前两周急性呼吸道感染（ARI）症状的患病率（5岁以下儿童）（%）“：
+		"Children age 12-23 months fully vaccinated based on information from either vaccination card or mother's recall11 (%)": "(64.2)",  根据疫苗接种卡或母亲回忆的信息，12-23 个月的儿童完全接种疫苗11 （%）
+		"Children age 12-23 months fully vaccinated based on information from vaccination card only12 (%)": "(94.1)", 12-23 个月的儿童仅根据疫苗接种卡上的信息完全接种疫苗12 （%
+		"Children age 12-23 months who have received 3 doses of penta or DPT vaccine (%)": "(71.9)", 接种了 3 剂五药或 DPT 疫苗的 12-23 个月大的儿童 （%）
+		"Children age 12-23 months who have received 3 doses of penta or hepatitis B vaccine (%)": "(68.6)", 接种了3剂五剂或乙型肝炎疫苗的12-23个月大的儿童（%）
+		"Children age 12-23 months who have received 3 doses of polio vaccine13 (%)": "(69.1)",接种了3剂脊髓灰质炎疫苗的12-23个月大的儿童13 （%）
+		"Children age 12-23 months who have received 3 doses of rotavirus vaccine14 (%)": "(3.1)", 接种了3剂轮状病毒疫苗的12-23个月大的儿童14 （%）
+		"Children age 12-23 months who have received BCG (%)": "(80.4)", 接受过卡介苗的 12-23 个月大的儿童 （%）
+		"Children age 12-23 months who have received the first dose of measles-containing vaccine (MCV) (%)": "(67.3)", 已接种第一剂含麻疹疫苗 （MCV） 的 12-23 个月大的儿童
+		"Children age 12-23 months who received most of their vaccinations in a private health facility (%)": "(0.0)", 在私人医疗机构接种大部分疫苗的 12-23 个月大的儿童
+		"Children age 12-23 months who received most of their vaccinations in a public health facility (%)": "(100.0)", 在公共卫生机构接种大部分疫苗的 12-23 个月大的儿童
+		"Children age 24-35 months who have received a second dose of measles-containing vaccine (MCV) (%)": "(20.7)", 已接种第二剂含麻疹疫苗 （MCV） 的 24-35 个月大儿童
+		"Children age 5 years who attended pre-primary school during the school year 2019-20 (%)": "(29.5)", 在2019-20学年期间接受学前教育的5岁儿童
+		"Children age 6-59 months who are anaemic (<11": { 6-59 个月大贫血的儿童
 			"0 g/dl)22 (%)": "37.7"
 		},
-		"Children age 6-8 months receiving solid or semi-solid food and breastmilk16 (%)": "",
-		"Children age 9-35 months who received a vitamin A dose in the last 6 months (%)": "94.9",
-		"Children born at home who were taken to a health facility for a check-up within 24 hours of birth (for last birth in the 5 years before the survey} (%)": "",
-		"Children swith diarrhoea in the 2 weeks preceding the survey taken to a health facility or health provider (Children under age 5 years) (%)": "",
-		"Children under 5 years who are overweight (weight-for-height)20 (%)": "1.5",
-		"Children under 5 years who are severely wasted (weight-for-height)19 (%)": "7.8",
-		"Children under 5 years who are stunted (height-for-age)18 (%)": "21.6",
-		"Children under 5 years who are underweight (weight-for-age)18 (%)": "24.6",
-		"Children under 5 years who are wasted (weight-for-height)18 (%)": "15.7",
-		"Children under age 3 years breastfed within one hour of birth15 (%)": "55.4",
-		"Children under age 5 years whose birth was registered with the civil authority (%)": "98.0",
-		"Children under age 6 months exclusively breastfed16 (%)": "",
-		"Children who received postnatal care from a doctor/nurse/LHV/ANM/midwife/ other health personnel within 2 days of delivery (for last birth in the 5 years before the survey) (%)": "92.5",
-		"Children with diarrhoea in the 2 weeks preceding the survey who received oral rehydration salts (ORS) (Children under age 5 years) (%)": "",
+		"Children age 6-8 months receiving solid or semi-solid food and breastmilk16 (%)": "", 6-8 个月大的儿童接受固体或半固体食物和母乳16
+		"Children age 9-35 months who received a vitamin A dose in the last 6 months (%)": "94.9", 在过去 6 个月内接受维生素 A 剂量的 9-35 个月大的儿童
+		"Children born at home who were taken to a health facility for a check-up within 24 hours of birth (for last birth in the 5 years before the survey} (%)": "", 在出生后24小时内被送往医疗机构进行检查的在家出生的儿童（调查前5年内最后一次分娩（%）
+		"Children swith diarrhoea in the 2 weeks preceding the survey taken to a health facility or health provider (Children under age 5 years) (%)": "", 在调查到医疗机构或医疗服务提供者处进行调查前 2 周内腹泻的儿童（5 岁以下儿童）
+		"Children under 5 years who are overweight (weight-for-height)20 (%)": "1.5", 5岁以下超重儿童（身高别体重）20
+		"Children under 5 years who are severely wasted (weight-for-height)19 (%)": "7.8", 严重消瘦的 5 岁以下儿童（身高别体重）19
+		"Children under 5 years who are stunted (height-for-age)18 (%)": "21.6",发育迟缓的 5 岁以下儿童（年龄别身高）18
+		"Children under 5 years who are underweight (weight-for-age)18 (%)": "24.6", 体重不足的 5 岁以下儿童（年龄别体重）18
+		"Children under 5 years who are wasted (weight-for-height)18 (%)": "15.7",体重不足的 5 岁以下儿童（年龄别体重）18
+		"Children under age 3 years breastfed within one hour of birth15 (%)": "55.4", 3岁以下儿童出生后一小时内母乳喂养15 （%）
+		"Children under age 5 years whose birth was registered with the civil authority (%)": "98.0",在民政当局登记出生的 5 岁以下儿童
+		"Children under age 6 months exclusively breastfed16 (%)": "",6 个月以下的儿童纯母乳喂养16
+		"Children who received postnatal care from a doctor/nurse/LHV/ANM/midwife/ other health personnel within 2 days of delivery (for last birth in the 5 years before the survey) (%)": "92.5", 在分娩后2天内接受医生/护士/LHV/ANM/助产士/其他卫生人员产后护理的儿童（调查前5年内的最后一次分娩）
+		"Children with diarrhoea in the 2 weeks preceding the survey who received oral rehydration salts (ORS) (Children under age 5 years) (%)": "",在调查前两周内接受口服补液盐（ORS）的腹泻儿童（5岁以下儿童）
 		"Children with diarrhoea in the 2 weeks preceding the survey who received zinc (Children under age 5 years) (%)": "",
-		"Children with fever or symptoms of ARI in the 2 weeks preceding the survey taken to a health facility or health provider (Children under age 5 years) (%)": "(85.7)",
-		"Current Use of Family Planning Methods (Currently Married Women Age 15-49  years) - Any method6 (%)": "65.3",
-		"Current Use of Family Planning Methods (Currently Married Women Age 15-49  years) - Any modern method6 (%)": "57.2",
-		"Current Use of Family Planning Methods (Currently Married Women Age 15-49  years) - Condom (%)": "4.9",
-		"Current Use of Family Planning Methods (Currently Married Women Age 15-49  years) - Female sterilization (%)": "46.4",
-		"Current Use of Family Planning Methods (Currently Married Women Age 15-49  years) - IUD/PPIUD (%)": "2.7",
-		"Current Use of Family Planning Methods (Currently Married Women Age 15-49  years) - Injectables (%)": "1.2",
-		"Current Use of Family Planning Methods (Currently Married Women Age 15-49  years) - Male sterilization (%)": "0.0",
-		"Current Use of Family Planning Methods (Currently Married Women Age 15-49  years) - Pill (%)": "2.0",
-		"Current users ever told about side effects of current method of family planning8 (%)": "49.4",
-		"Deaths in the last 3 years registered with the civil authority (%)": "83.2",
-		"District Names": "Nicobars",
-		"Female population age 6 years and above who ever attended school (%)": "78.0",
-		"Health worker ever talked to female non-users about family planning (%)": "40.4",
-		"Home births that were conducted by skilled health personnel  (in the 5 years before the survey)10 (%)": "0.8",
-		"Households using clean fuel for cooking3 (%)": "56.9",
-		"Households using iodized salt (%)": "99.4",
-		"Households with any usual member covered under a health insurance/financing scheme (%)": "2.7",
-		"Institutional births (in the 5 years before the survey) (%)": "97.8",
-		"Institutional births in public facility (in the 5 years before the survey) (%)": "96.7",
-		"Men (age 15 years and above wih  very high (>160 mg/dl) Blood sugar level23 (%)": "4.4",
-		"Men age 15 years and above who consume alcohol (%)": "64.5",
-		"Men age 15 years and above who use any kind of tobacco (%)": "76.8",
-		"Men age 15 years and above wih Elevated blood pressure (Systolic \u2265140 mm of Hg and/or Diastolic \u226590 mm of Hg) or taking medicine to control blood pressure (%)": "47.0",
-		"Men age 15 years and above wih Mildly elevated blood pressure (Systolic 140-159 mm of Hg and/or Diastolic 90-99 mm of Hg) (%)": "32.9",
-		"Men age 15 years and above wih Moderately or severely elevated blood pressure (Systolic \u2265160 mm of Hg and/or Diastolic \u2265100 mm of Hg) (%)": "11.1",
-		"Men age 15 years and above wih high (141-160 mg/dl) Blood sugar level23 (%)": "9.6",
+		"Children with fever or symptoms of ARI in the 2 weeks preceding the survey taken to a health facility or health provider (Children under age 5 years) (%)": "(85.7)", 在调查前2周内发烧或出现ARI症状的儿童被带到医疗机构或医疗服务提供者（5岁以下儿童）（%）
+		"Current Use of Family Planning Methods (Currently Married Women Age 15-49  years) - Any method6 (%)": "65.3",目前使用计划生育方法（目前15-49岁的已婚妇女）-任何方法6
+		"Current Use of Family Planning Methods (Currently Married Women Age 15-49  years) - Any modern method6 (%)": "57.2", 计划生育方法的当前使用情况（目前15-49岁的已婚妇女）-任何现代方法6
+		"Current Use of Family Planning Methods (Currently Married Women Age 15-49  years) - Condom (%)": "4.9",目前使用计划生育方法（目前15-49岁的已婚妇女）——避孕套
+		"Current Use of Family Planning Methods (Currently Married Women Age 15-49  years) - Female sterilization (%)": "46.4", 目前使用计划生育方法（目前已婚妇女年龄在15-49岁之间）——女性绝育
+		"Current Use of Family Planning Methods (Currently Married Women Age 15-49  years) - IUD/PPIUD (%)": "2.7", 目前使用计划生育方法（目前15-49岁的已婚妇女）——宫内节育器/宫内节育器
+		"Current Use of Family Planning Methods (Currently Married Women Age 15-49  years) - Injectables (%)": "1.2", 目前使用计划生育方法（目前15-49岁的已婚妇女）-注射剂
+		"Current Use of Family Planning Methods (Currently Married Women Age 15-49  years) - Male sterilization (%)": "0.0", 目前使用计划生育方法（目前已婚妇女年龄在15-49岁之间）——男性绝育
+		"Current Use of Family Planning Methods (Currently Married Women Age 15-49  years) - Pill (%)": "2.0", 目前使用计划生育方法（目前15-49岁的已婚妇女）-避孕药（%）
+		"Current users ever told about side effects of current method of family planning8 (%)": "49.4", 当前用户曾经讲述过当前计划生育方法的副作用8
+		"Deaths in the last 3 years registered with the civil authority (%)": "83.2", 过去3年在民政当局登记的死亡人数（%）
+		"Female population age 6 years and above who ever attended school (%)": "78.0", 6岁及以上曾上过学的女性人口（%）
+		"Health worker ever talked to female non-users about family planning (%)": "40.4", 卫生工作者曾与非使用者的女性谈论计划生育（%）
+		"Home births that were conducted by skilled health personnel  (in the 5 years before the survey)10 (%)": "0.8", 由熟练卫生人员进行的家庭分娩（调查前5年）10
+		"Households using clean fuel for cooking3 (%)": "56.9", 使用清洁燃料做饭的家庭3 （%）
+		"Households using iodized salt (%)": "99.4", 使用碘盐的家庭（%）
+		"Households with any usual member covered under a health insurance/financing scheme (%)": "2.7", 健康保险/融资计划涵盖任何普通成员的家庭
+		"Institutional births (in the 5 years before the survey) (%)": "97.8",机构出生（调查前5年）（%）
+		"Institutional births in public facility (in the 5 years before the survey) (%)": "96.7",公共设施中的机构分娩（调查前5年内）
+		"Men (age 15 years and above wih  very high (>160 mg/dl) Blood sugar level23 (%)": "4.4",男性（15岁及以上，血糖水平非常高（>160毫克/分升）23
+		"Men age 15 years and above who consume alcohol (%)": "64.5",饮酒的 15 岁及以上男性
+		"Men age 15 years and above who use any kind of tobacco (%)": "76.8", 使用任何烟草的 15 岁及以上男性
+		"Men age 15 years and above wih Elevated blood pressure (Systolic \u2265140 mm of Hg and/or Diastolic \u226590 mm of Hg) or taking medicine to control blood pressure (%)": "47.0", 15 岁及以上且血压升高（收缩压 ≥140 mm 汞柱和/或舒张压 ≥90 mm Hg）或正在服用药物控制血压
+		"Men age 15 years and above wih Mildly elevated blood pressure (Systolic 140-159 mm of Hg and/or Diastolic 90-99 mm of Hg) (%)": "32.9",15 岁及以上且血压轻度升高（收缩压 140-159 毫米汞柱和/或舒张压 90-99 毫米汞柱）
+		"Men age 15 years and above wih Moderately or severely elevated blood pressure (Systolic \u2265160 mm of Hg and/or Diastolic \u2265100 mm of Hg) (%)": "11.1", 15 岁及以上且血压中度或重度升高（收缩压 ≥160 mm 汞柱和/或舒张压 ≥100 mm Hg）
+		"Men age 15 years and above wih high (141-160 mg/dl) Blood sugar level23 (%)": "9.6",15岁及以上高血糖水平（141-160毫克/分升）的男性23（%）“：
 		"Men age 15 years and above wih high or very high (>140 mg/dl) Blood sugar level  or taking medicine to control blood sugar level23 (%)": "15.4",
+		“15岁及以上高或非常高（>140毫克/分升）血糖水平或服用药物控制血糖水平的男性23（%）
 		"Mothers who consumed iron folic acid for 100 days or more when they were pregnant (for last birth in the 5 years before the survey) (%)": "72.6",
-		"Mothers who consumed iron folic acid for 180 days or more when they were pregnant (for last birth in the 5 years before the survey} (%)": "43.9",
-		"Mothers who had an antenatal check-up in the first trimester  (for last birth in the 5 years before the survey) (%)": "62.8",
-		"Mothers who had at least 4 antenatal care visits  (for last birth in the 5 years before the survey) (%)": "71.7",
-		"Mothers who received postnatal care from a doctor/nurse/LHV/ANM/midwife/other health personnel within 2 days of delivery (for last birth in the 5 years before the survey) (%)": "85.1",
+		"Mothers who consumed iron folic acid for 180 days or more when they were pregnant (for last birth in the 5 years before the survey} (%)": "43.9",怀孕时食用叶酸铁180天或以上的母亲 调查前5年内最后一次分娩
+		"Mothers who had an antenatal check-up in the first trimester  (for last birth in the 5 years before the survey) (%)": "62.8",在妊娠早期进行产前检查的母亲（调查前5年内的最后一次分娩）
+		"Mothers who had at least 4 antenatal care visits  (for last birth in the 5 years before the survey) (%)": "71.7",至少接受过4次产前检查的母亲（调查前5年内最后一次分娩）
+		"Mothers who received postnatal care from a doctor/nurse/LHV/ANM/midwife/other health personnel within 2 days of delivery (for last birth in the 5 years before the survey) (%)": "85.1", 在分娩后2天内接受医生/护士/LHV/ANM/助产士/其他卫生人员产后护理的母亲（调查前5年内的最后一次分娩）
 		"Mothers whose last birth was protected against neonatal tetanus (for last birth in the 5 years before the survey)9 (%)": "78.0",
-		"Non-breastfeeding children age 6-23 months receiving an adequate diet16, 17 (%)": "",
+		"Non-breastfeeding children age 6-23 months receiving an adequate diet16, 17 (%)": "",接受充足饮食的6-23个月非母乳喂养儿童16， 17
 		"Non-pregnant women age 15-49 years who are anaemic (<12": {
-			"0 g/dl)22 (%)": "38.4"
+			"0 g/dl)22 (%)": "38.4"  年龄在 15-49 岁且贫血的非孕妇
 		},
-		"Number of Households surveyed": "882",
-		"Number of Men age 15-54 years interviewed": "125",
-		"Number of Women age 15-49 years interviewed": "764",
-		"Population below age 15 years (%)": "23.0",
-		"Population living in households that use an improved sanitation facility2 (%)": "83.5",
-		"Population living in households with an improved drinking-water source1 (%)": "98.8",
-		"Population living in households with electricity (%)": "97.9",
+		"Population below age 15 years (%)": "23.0", 15岁以下人口（%）
+		"Population living in households that use an improved sanitation facility2 (%)": "83.5", 生活在使用经改善的卫生设施的家庭中的人口2
+		"Population living in households with an improved drinking-water source1 (%)": "98.8", 生活在饮用水源改善的家庭中的人口1
+		"Population living in households with electricity (%)": "97.9", 有电家庭人口（%）
 		"Pregnant women age 15-49 years who are anaemic (<11": {
-			"0 g/dl)22 (%)": ""
+			"0 g/dl)22 (%)": ""  15-49 岁贫血的孕妇
 		},
-		"Prevalence of diarrhoea in the 2 weeks preceding the survey (Children under age 5 years) (%)": "5.7",
-		"Registered pregnancies for which the mother received a Mother and Child Protection (MCP) card (for last birth in the 5 years before the survey) (%)": "97.9",
-		"Sex ratio at birth for children born in the last five years (females per 1,000 males)": "927",
-		"State/UT": "Andaman & Nicobar Islands",
-		"Total Unmet need for Family Planning (Currently Married Women Age 15-49  years)7 (%)": "9.5",
-		"Total children age 6-23 months receiving an adequate diet16, 17  (%)": "(18.7)",
-		"Unmet need for spacing (Currently Married Women Age 15-49  years)7 (%)": "3.3",
-		"Women  age 15 years and above with high (141-160 mg/dl) Blood sugar level23 (%)": "7.4",
-		"Women (age 15-49 years) who are overweight or obese (BMI \u226525": {
-			"0 kg/m2)21 (%)": "39.1"
+		"Prevalence of diarrhoea in the 2 weeks preceding the survey (Children under age 5 years) (%)": "5.7", 调查前两周腹泻患病率（5岁以下儿童）
+		"Registered pregnancies for which the mother received a Mother and Child Protection (MCP) card (for last birth in the 5 years before the survey) (%)": "97.9", 母亲获得母婴保护（MCP）卡的登记怀孕（调查前5年内最后一次生育）
+		"Sex ratio at birth for children born in the last five years (females per 1,000 males)": "927", 过去五年出生的儿童出生性别比（每1 000名男性中的女性）
+		"Total Unmet need for Family Planning (Currently Married Women Age 15-49  years)7 (%)": "9.5", 未满足的计划生育需求总额（目前15-49岁的已婚妇女）7 （%）
+		"Total children age 6-23 months receiving an adequate diet16, 17  (%)": "(18.7)", 6-23个月大的儿童获得充足饮食16， 17 （%）
+		"Unmet need for spacing (Currently Married Women Age 15-49  years)7 (%)": "3.3", 未满足的间距需求（目前已婚女性年龄在15-49岁）7 （%）
+		"Women  age 15 years and above with high (141-160 mg/dl) Blood sugar level23 (%)": "7.4", 15岁及以上血糖水平高（141-160毫克/分升）的女性23
+		"Women (age 15-49 years) who are overweight or obese (BMI \u226525": { 
+			"0 kg/m2)21 (%)": "39.1" 超重或肥胖的女性（15-49 岁）
 		},
-		"Women (age 15-49 years) who have high risk waist-to-hip ratio (\u22650": {
-			"85) (%)": "62.5"
-		},
+		"Women (age 15-49 years) who have high risk waist-to-hip ratio (\u22650": { 
+			"85) (%)": "62.5" 腰臀比风险较高的女性（15-49 岁）
+		}, 
 		"Women (age 15-49 years) whose Body Mass Index (BMI) is below normal (BMI <18": {
-			"5 kg/m2)21 (%)": "8.2"
-		},
-		"Women (age 15-49)  with 10 or more years of schooling (%)": "53.5",
-		"Women (age 15-49) who are literate4 (%)": "87.5",
-		"Women (age 30-49 years) Ever undergone a breast examination for breast cancer (%)": "13.2",
-		"Women (age 30-49 years) Ever undergone a screening test for cervical cancer (%)": "13.4",
-		"Women (age 30-49 years) Ever undergone an oral cavity examination for oral cancer (%)": "5.4",
-		"Women age 15 years and above who consume alcohol (%)": "29.6",
-		"Women age 15 years and above who use any kind of tobacco (%)": "63.5",
-		"Women age 15 years and above wih Elevated blood pressure (Systolic \u2265140 mm of Hg and/or Diastolic \u226590 mm of Hg) or taking medicine to control blood pressure (%)": "35.4",
-		"Women age 15 years and above wih Mildly elevated blood pressure (Systolic 140-159 mm of Hg and/or Diastolic 90-99 mm of Hg) (%)": "23.2",
-		"Women age 15 years and above wih Moderately or severely elevated blood pressure (Systolic \u2265160 mm of Hg and/or Diastolic \u2265100 mm of Hg) (%)": "8.5",
-		"Women age 15 years and above wih high or very high (>140 mg/dl) Blood sugar level or taking medicine to control blood sugar level23 (%)": "13.1",
-		"Women age 15 years and above wih very high (>160 mg/dl) Blood sugar level23 (%)": "3.9",
-		"Women age 15-19 years who were already mothers or pregnant at the time of the survey (%)": "1.8",
-		"Women age 15-24 years who use hygienic methods of protection during their menstrual period5 (%)": "100.0",
-		"Women age 20-24 years married before age 18 years (%)": "11.4",
+			"5 kg/m2)21 (%)": "8.2" 体重指数（BMI）低于正常水平的女性（15-49岁）
+		}, 
+		"Women (age 15-49)  with 10 or more years of schooling (%)": "53.5", 受过10年或10年以上教育的妇女（15-49岁）
+		"Women (age 15-49) who are literate4 (%)": "87.5", 识字的妇女（15-49岁）4
+		"Women (age 30-49 years) Ever undergone a breast examination for breast cancer (%)": "13.2", 女性（30-49岁） 曾经接受过乳腺癌乳房检查
+		"Women (age 30-49 years) Ever undergone a screening test for cervical cancer (%)": "13.4", 女性（30-49岁） 曾经接受过宫颈癌筛查测试
+		"Women (age 30-49 years) Ever undergone an oral cavity examination for oral cancer (%)": "5.4", 女性（30-49岁） 曾经接受过口腔癌检查
+		"Women age 15 years and above who consume alcohol (%)": "29.6", 饮酒的 15 岁及以上女性
+		"Women age 15 years and above who use any kind of tobacco (%)": "63.5", 使用任何烟草的 15 岁及以上女性
+		"Women age 15 years and above wih Elevated blood pressure (Systolic \u2265140 mm of Hg and/or Diastolic \u226590 mm of Hg) or taking medicine to control blood pressure (%)": "35.4", 15 岁及以上且血压升高（收缩压 ≥140 mm 汞柱和/或舒张压 ≥90 mm Hg）或服用药物控制血压 （%）
+		"Women age 15 years and above wih Mildly elevated blood pressure (Systolic 140-159 mm of Hg and/or Diastolic 90-99 mm of Hg) (%)": "23.2", 15 岁及以上且血压轻度升高的女性（收缩压 140-159 毫米汞柱和/或舒张压 90-99 毫米汞柱）
+		"Women age 15 years and above wih Moderately or severely elevated blood pressure (Systolic \u2265160 mm of Hg and/or Diastolic \u2265100 mm of Hg) (%)": "8.5", 15 岁及以上的女性 中度或重度血压升高（收缩压 ≥160 mm 汞柱和/或舒张压 ≥100 mm Hg）（%）
+		"Women age 15 years and above wih high or very high (>140 mg/dl) Blood sugar level or taking medicine to control blood sugar level23 (%)": "13.1", 15岁及以上的女性，高或非常高（>140毫克/分升） 血糖水平或服用药物控制血糖水平23
+		"Women age 15 years and above wih very high (>160 mg/dl) Blood sugar level23 (%)": "3.9", 15岁及以上的女性血糖水平非常高（>160毫克/分升）23
+		"Women age 15-19 years who were already mothers or pregnant at the time of the survey (%)": "1.8", 15-19岁在调查时已经为人母或怀孕的女性（%）
+		"Women age 15-24 years who use hygienic methods of protection during their menstrual period5 (%)": "100.0", 15-24 岁女性在月经期间使用卫生防护方法5
+		"Women age 20-24 years married before age 18 years (%)": "11.4", 20-24岁未婚妇女在18岁之前结婚（%）
 		"field1": "0"
 	},
 ]
