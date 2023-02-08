@@ -173,7 +173,7 @@ onMounted(async() => {
                 if(index == 0){
                     sum += (el[f] * el["Number of Men age 15-54 years interviewed"])/100
                 }else{
-                    sum += (el[f] * el["Number of Women age 15-49 years interviewed"])/100
+                    sum += (el[f] * el["Number of Women age 15-49 years interviewed                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 "])/100
                 }
                 
             })

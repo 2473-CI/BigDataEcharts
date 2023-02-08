@@ -550,24 +550,24 @@ curl --location --request POST 'http://192.168.10.109:8999/war' \
 ```json
 [
     {
-        "APC": "516",
-        "MRL": "4",
-        "aircraft": "10",
-        "anti-aircraft warfare": "0",
-        "cruise missiles": "",
-        "date": "2022-02-25",
-        "day": "2",
-        "drone": "0",
-        "field artillery": "49",
-        "fuel tank": "60.0",
-        "greatest losses direction": "",
-        "helicopter": "7",
-        "military auto": "100.0",
-        "mobile SRBM system": "",
-        "naval ship": "2",
-        "special equipment": "",
-        "tank": "80",
-        "vehicles and fuel tanks": ""
+        "APC": "516",装甲运兵车
+        "MRL": "4",最大残留限量
+        "aircraft": "10", 飞机
+        "anti-aircraft warfare": "0",  防空战
+        "cruise missiles": "", 巡航导弹
+        "date": "2022-02-25", 
+        "day": "2", 
+        "drone": "0",  无人机
+        "field artillery": "49", 野战炮兵
+        "fuel tank": "60.0", 油箱
+        "greatest losses direction": "", 最大损失方向
+        "helicopter": "7", 直升机
+        "military auto": "100.0", 军用汽车
+        "mobile SRBM system": "", 移动式短程弹道导弹系统
+        "naval ship": "2", 舰船
+        "special equipment": "", 特种设备
+        "tank": "80", 坦克
+        "vehicles and fuel tanks": "" 车辆和油箱
     },
 ]
 ```
