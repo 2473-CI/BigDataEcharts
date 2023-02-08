@@ -571,3 +571,41 @@ curl --location --request POST 'http://192.168.10.109:8999/war' \
     },
 ]
 ```
+
+
+### 
+### 美国大规模枪击事件信息统计
+
+#### 接口地址
+
+```
+curl --location --request GET 'http://192.168.10.109:8999/shoot'
+```
+
+#### 接口数据
+
+```json
+[
+    {  // 此数据集包含 2018 年至 2022 年的五个 csv 文件。每个数据包含以下属性
+        "Date": "31/12/2018", 大规模枪击事件发生的日期
+        "Dead": "3",  死于大规模枪击事件的总人数
+        "Description": "A dispute began at a rented Airbnb during a New Year's Eve party. Three men were killed and another man and woman were wounded.", 事件的描述/简短报告，其中可能包括性别/地点等信息。
+        "Injured": "2", 在大规模枪击事件中受伤的总人数-
+        "State": "Ohio", 事件发生的州
+        "Total": "5" 死伤总人数
+    },
+]
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
