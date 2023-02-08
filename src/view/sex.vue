@@ -144,21 +144,116 @@ onMounted(async() => {
     }
     plot3.setOption(opt3)
 
+let datas3 = []
+data.forEach(element => {
+    if(element["LONGITUDE"]==""&&element["LATITUDE"]==""){}
+    else{
+        datas3.push([
+        Number(element["LONGITUDE"]),
+        Number(element["LATITUDE"])
+    ])
+    }
+
+});
     let plot4 = echarts.init(s4.value)
     let opt4 = {
         title: {
             text: "犯罪分子地理空间分布"
-        }
+        },
+        xAxis:{
+            scale:true
+        },
+        yAxis:{
+            scale:true
+        },
+        series:[
+            {
+                type:"scatter",
+                data:datas3,
+            }
+        ],
+        tooltip:{
+                    show:true,
+                    trigger: "axis",
+                }
+
     }
     plot4.setOption(opt4)
+    console.log(opt4)
 
-    let plot5 = echarts.init(s5.value)
-    let opt5 = {
-        title: {
-            text: "每月每天的犯罪数量"
+// console.log(data)
+    // let titles4=["一月","二月","三月","四月","五月","六月",
+    //             "七月","八月","九月","十月","十一月","十二月"]
+    let legends4=[],datas4=[],titles4=[],singleAxiss=[],seriess=[]
+
+    
+    data.forEach(element => {
+        let date = element["ADDDATE"].split(" ")[0].split("/")
+        datas4.push(
+            [
+                date[1], date[2]
+            ]
+        )
+        if(!titles4.includes(date[1])){
+            titles4.push(date[1])
+        }
+        if(!legends4.includes(date[2])){
+            legends4.push(date[2])
+        }
+    });
+    
+    let data_4={}
+    for(let m = 0; m < 12; m++){
+        data_4[m] = []
+        for(let d = 0; d < 31; d++){
+            data_4[m][d] = datas4.filter(it => Number(it[0]) == m+1 && Number(it[1]) == d+1).length
         }
     }
+
+    // console.log(data_4)
+
+    let title4=titles4.sort(),title_4=[]
+    title4.forEach(function(el,idx){
+        title_4.push(
+            {text:el, top:(idx+.4) *100 / titles4.length +"%"}
+        )
+        singleAxiss.push(
+            {   
+                top:(idx+.4) *100 / titles4.length +"%",
+                data:legends4.sort(),
+                height: "10px",
+                left: "75px",
+                axisLabel:{
+                    interval: 5
+                },
+                type:"category"
+            }
+        )
+        seriess.push(
+            {
+                singleAxisIndex: idx,
+                coordinateSystem:"singleAxis",
+                type:"scatter",
+                data:data_4[idx],
+                symbolSize: function(dataItem){
+                    return dataItem > 100? dataItem/15:dataItem
+                }
+            }
+        )
+    });
+    
+    let plot5 = echarts.init(s5.value)
+    let opt5 = {
+        tooltip:{
+            position: "top"
+        },
+        title:title_4,
+        singleAxis:singleAxiss,
+        series: seriess
+
+    }
     plot5.setOption(opt5)
+    console.log(opt5)
 })
 
 

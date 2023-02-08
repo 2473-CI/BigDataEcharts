@@ -97,6 +97,24 @@
             </div>
             </el-card>
         </div>
+
+        
+        <div class="box">
+            <el-card  shadow="hover" :body-style="{ padding: '0px' }">
+            <img
+                src="https://th.bing.com/th/id/OIP.PHsmW4nITClXsqQNv5wC4AHaE7?pid=ImgDet&rs=1"
+                class="image"
+            />
+            <div style="padding: 14px">
+                <span>印度全国健康调查</span>
+                <div class="bottom">
+                <time class="time">2023/02/07</time>
+                <el-button text class="button" @click="this.$router.push('/keep')">查看</el-button>
+                </div>
+            </div>
+            </el-card>
+        </div>
+
     </div>
 </template>
 
