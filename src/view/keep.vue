@@ -48,7 +48,6 @@ function GB(arr, tup){
 
 onMounted(async() => {
     await axios.get("http://192.168.10.109:8999/keep").then(res => data = res.data)
-
     console.log(data)
 
     let State = [...new Set(data.map(it => it["State/UT"]))]
@@ -278,14 +277,49 @@ onMounted(async() => {
     plot4.setOption(opt4)
 
     
+    let yimiao_5=["五剂DPT疫苗", "五剂乙型肝炎", "3剂脊髓灰质炎", "3剂轮状病毒", "卡介苗", "二剂含麻疹疫苗"]
+    let regions=[],regions_5=[]
+    data.forEach(element => {
+        if(!regions.includes(element["State/UT"])){
+            regions.push(element["State/UT"])
+        }
+    });
+
+    regions.forEach(element => {
+        regions_5.push({
+            name: element
+        })
+    });
+    
+    console.log(regions)
 
     let plot5 = echarts.init(k5.value)
     let opt5 = {
+        tooltip:{position:"top"},
         title: {
-            text: "男女受访者贫血人数对比",
+            text: "儿童疫苗接种统计",
             left: "center",
             top: "3%"
-        }
+        },
+        legend:{
+            data:yimiao_5,
+        },
+        radar:{
+            shape:"cycle",
+            indicator:regions_5
+        },
+        series:[{
+            type: "radar",
+            data:[
+                {name:"五剂DPT疫苗", value:[10, 20]} ,
+                {name:"五剂乙型肝炎", value:[20]} ,
+                {name:"3剂脊髓灰质炎", value:[30]} ,
+                {name:"3剂轮状病毒", value:[12]} ,
+                {name:"卡介苗", value:[54]} ,
+                {name:"二剂含麻疹疫苗", value:[9]}
+            ]
+        }]
+
     }
     plot5.setOption(opt5)
 

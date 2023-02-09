@@ -19,7 +19,7 @@
         </h6>
         <div class="char" ref="k4"></div>
         <h6>
-          5.以Illinois、California、Texas、Florida、Pennsylvania 五大洲为例，绘制单轴散点图，分析每年每月死亡人数
+          5.以Illinois、California、Texas、Florida、Pennsylvania 五大洲为例，绘制单轴散点图，分析每月死亡人数
         </h6>
         <div class="char" ref="k5"></div>
     </div>
@@ -46,20 +46,45 @@ onMounted(async() => {
 
     let State_5=["Illinois", "California", "Texas", "Florida", "Pennsylvania"]
     let title_5=[], singleAxis_5=[], series_5=[],month=[]
-    data.forEach(element => {
-        let date = element["Date"].split("/")
-        console.log(date)
-    });
+    let tmp5 = State_5.map(state => {
+        let num={}
+        let stateData = data.filter(o => o.State == state)
+        stateData.forEach(element => {
+            let date = element["Date"].split("/")
+            if(!month.includes(date[1])){month.push(date[1])}
+
+            if(num[date[1]]==undefined){num[date[1]]=0}
+            num[date[1]] += Number(element["Dead"])
+        });
+        return num
+    })
     State_5.forEach(function(el, idx){
+
         title_5.push(
             {
                 text:el,
                 top: (idx+.4) * 100 / State_5.length +"%"
+            })
+        singleAxis_5.push(
+            {
+                type:"category",
+
+                data:month.sort(),
+                top: (idx+.4) * 100 / State_5.length +"%",
+                height:"10px",
+                left:"150px",
+                interval:4
             }
         )
-        singleAxis_5.push(
-
-        )
+        series_5.push({
+            type:"scatter",
+            coordinateSystem:"singleAxis",
+            singleAxisIndex:idx,
+            data:Object.values(tmp5[idx]),
+            symbolSize:function(dataItem){
+                return dataItem
+            }
+        })
     })
 
     let plot5 = echarts.init(k5.value)
@@ -72,6 +97,7 @@ onMounted(async() => {
         series:series_5
 
     }
+    console.log(opt5)
     plot5.setOption(opt5)
 
 })

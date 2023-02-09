@@ -42,7 +42,7 @@ onMounted(async() => {
 
 
     let sb = Object.keys(data[0]).filter(sb => sb!="date" || sb!="day" || sb!="greatest losses direction" || sb!="MRL")
-    console.log(sb)
+    console.log
     let plot1 = echarts.init(k1.value)
     let opt1 = {
         title: {
@@ -69,6 +69,7 @@ onMounted(async() => {
             return {
                 type: "line",
                 name: name,
+                symbol: "none",
                 data: data.map(line => {
                     return [new Date(line.date).getTime(), Number(line[name])]
                 })
@@ -76,8 +77,65 @@ onMounted(async() => {
         })
     }
     plot1.setOption(opt1)
-
     console.log(k1)
+
+    let arr = []
+    data.map(it => arr.push(... it["greatest losses direction"].replaceAll("and", " ").replaceAll(",", " ").split(" ").filter(it => it!='')))
+    let tmp2 = [... new Set(arr)].map(name => {return {name: name, value: arr.filter(o => o == name).length}}).sort((o1, o2) => o1.value - o2.value)
+    let plot2 = echarts.init(k2.value)
+    let opt2 = {
+        title: {
+            text: "各设施在最大损失种的占比"
+        },
+        series: [
+            {
+                type: "pie",
+                data: tmp2,
+                roseType: 'area',
+                
+            }
+        ]
+    }
+    plot2.setOption(opt2)
+
+
+
+    console.log(data)
+    let legend=["01","02"] // 月
+    let plot5 = echarts.init(k5.value)
+    let opt5={
+        tooltip:{
+            position:"top"
+        },
+        title:{
+            text:"战争设备损失情况",
+            left: "center"
+        },
+        legend:{
+            data:legend,
+            left:"20px",
+            top: "20px",
+            orient:"vertical"
+        },
+        radar:{
+            indicator:[
+                {name: "直升机"},
+                {name: "无人机"},
+                {name: "防空设备"},
+                {name: "巡航导弹"}
+            ]
+        },
+        series:[{
+            type:"radar",
+            data:[
+                {name:"01",value:[10,20,30,40]},
+                {name:"02",value:[20,30,10,50]} //月 直升机的值,无人机的值……
+            ]
+        }]
+
+        
+    }
+    plot5.setOption(opt5)
 })
 
 </script>
