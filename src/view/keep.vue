@@ -15,7 +15,7 @@
         </h6>
         <div class="char" ref="k3"></div>
         <h6>
-           4.男女受访者贫血人数对比: 接受调查人数前十的州，贫血人数对比 柱状图
+           4.男女受访者高血糖人数对比: 接受调查人数前十的州，贫血人数对比 柱状图
         </h6>
         <div class="char" ref="k4"></div>
         <h6>
@@ -48,6 +48,8 @@ function GB(arr, tup){
 
 onMounted(async() => {
     await axios.get("http://192.168.10.109:8999/keep").then(res => data = res.data)
+
+    console.log(data)
 
     let State = [...new Set(data.map(it => it["State/UT"]))]
 
@@ -103,9 +105,9 @@ onMounted(async() => {
         for(let l of list) if((l + 0) != NaN) sum += l
         return [Math.max(...list), sum/list.length, Math.min(...list)]
     })
-    console.log(State)
 
-    console.log(tmp2)
+
+
     let plot2 = echarts.init(k2.value)
     let opt2 = {
         title: {
@@ -150,7 +152,7 @@ onMounted(async() => {
             }
         ]
     }
-    console.log(opt2)
+
     plot2.setOption(opt2)
 
     // 包括Condom、IUD/PPIUD、Injectables、Pill
@@ -166,23 +168,21 @@ onMounted(async() => {
         return flag.map(f => {  // 方式
             let arr = data.filter(d => d["State/UT"] == state) // 过滤后的数组
             let sum = 0
-            
             // arr.map(it => it[f]).forEach(el => {
-            //     console.log(el)
             //     sum += Number(el["Number of Households surveyed"]) * Number(el[f])
             // })
             arr.forEach((el, index) => { // 数据
                 if(index == 0){
                     sum += (el[f] * el["Number of Men age 15-54 years interviewed"])/100
                 }else{
-                    sum += (el[f] * el["Number of Women age 15-49 years interviewed                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 "])/100
+                    sum += (el[f] * el["Number of Women age 15-49 years interviewed"])/100
                 }
                 
             })
             return sum
         })
     })
-    console.log(tmp3)
+
     let plot3 = echarts.init(k3.value)
     let opt3 = {
         title: {
@@ -233,7 +233,6 @@ onMounted(async() => {
             }
         ]
     }
-    console.log(plot3)
     plot3.setOption(opt3)
 
 

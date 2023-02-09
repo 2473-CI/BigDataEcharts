@@ -115,6 +115,38 @@
             </el-card>
         </div>
 
+        <div class="box">
+            <el-card  shadow="hover" :body-style="{ padding: '0px' }">
+            <img
+                src="https://www.by56.com/Upload/News/2022/dced8940-f304-462b-b3fe-71ab64de6f70.jpg"
+                class="image"
+            />
+            <div style="padding: 14px">
+                <span>俄乌局势分析</span>
+                <div class="bottom">
+                <time class="time">2023/02/09</time>
+                <el-button text class="button" @click="this.$router.push('/war')">查看</el-button>
+                </div>
+            </div>
+            </el-card>
+        </div>
+
+        <div class="box">
+            <el-card  shadow="hover" :body-style="{ padding: '0px' }">
+            <img
+                src="https://ts1.cn.mm.bing.net/th/id/R-C.dc14a536850d1efd9753318abc2e73e0?rik=PD9oLZOa6TzNPw&riu=http%3a%2f%2fnews.cjn.cn%2fgnxw%2f202103%2fW020210329438793429102.png&ehk=IC%2bb9Tfh%2b75iGjv8wXNvcFfv3Cs%2f3DyIFHHAwhXWgXw%3d&risl=&pid=ImgRaw&r=0"
+                class="image"
+            />
+            <div style="padding: 14px">
+                <span>自由美利坚，枪战每一天</span>
+                <div class="bottom">
+                <time class="time">2023/02/09</time>
+                <el-button text class="button" @click="this.$router.push('/shoot')">查看</el-button>
+                </div>
+            </div>
+            </el-card>
+        </div>
+
     </div>
 </template>
 

@@ -7,6 +7,8 @@ import yt from '@/view/yt'
 import st from '@/view/st'
 import sex from '@/view/sex'
 import keep from '@/view/keep'
+import war from '@/view/war'
+import shoot from '@/view/shoot'
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -41,6 +43,14 @@ const router = createRouter({
         { 
             path: '/keep',
             component: keep 
+        },
+        { 
+            path: '/war',
+            component: war 
+        },
+        { 
+            path: '/shoot',
+            component: shoot 
         },
       ]
   })
