@@ -40,7 +40,43 @@ let data = []
 
 onMounted(async() => {
     await axios.get("/api/shoot").then(res => data = res.data)
+    console.log(data)
+
+
+
+    let State_5=["Illinois", "California", "Texas", "Florida", "Pennsylvania"]
+    let title_5=[], singleAxis_5=[], series_5=[],month=[]
+    data.forEach(element => {
+        let date = element["Date"].split("/")
+        console.log(date)
+    });
+    State_5.forEach(function(el, idx){
+        title_5.push(
+            {
+                text:el,
+                top: (idx+.4) * 100 / State_5.length +"%"
+            }
+        )
+        singleAxis_5.push(
+
+        )
+    })
+
+    let plot5 = echarts.init(k5.value)
+    let opt5 ={
+        tooltip:{
+            position:"top"
+        },
+        title:title_5,
+        singleAxis:singleAxis_5,
+        series:series_5
+
+    }
+    plot5.setOption(opt5)
+
 })
+
+
 
 </script>
 

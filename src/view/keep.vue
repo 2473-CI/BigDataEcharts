@@ -235,16 +235,49 @@ onMounted(async() => {
     }
     plot3.setOption(opt3)
 
-
+    let StateTop10 = Object.keys(p1).map(name => {return {name: name, value: p1[name]}} ).sort((o1, o2) => -(o1.value - o2.value)).slice(0, 10)
+    let tmp4 = StateTop10.map(state => {
+        let filterArr = data.filter(line => line["State/UT"] == state.name)
+        let ob = {"M": 0, "W": 0}
+        filterArr.forEach(filterLine => {
+            
+            ob.M += Number(filterLine["Number of Men age 15-54 years interviewed"]) * Number(filterLine["Men age 15 years and above wih high (141-160 mg/dl) Blood sugar level23 (%)"])
+            ob.W += Number(filterLine["Number of Women age 15-49 years interviewed"]) * Number(filterLine["Women age 15 years and above wih very high (>160 mg/dl) Blood sugar level23 (%)"])
+        })
+        return ob
+    })
+    console.log(tmp4)
+    
     let plot4 = echarts.init(k4.value)
     let opt4 = {
         title: {
-            text: "男女受访者贫血人数对比",
+            text: "男女受访者高血糖人数对比",
             left: "center",
             top: "3%"
-        }
+        },
+        xAxis: {
+            data: StateTop10.map(o => o.name)
+        },
+        legend: {
+            data: ["男性非常高血糖", "女性非常高血糖"]
+        },
+        yAxis: {},
+        series: [
+            {
+                type: "bar",
+                name: "男性非常高血糖",
+                data: tmp4.map(it => it.M)
+            },
+            {
+                type: "bar",
+                name: "女性非常高血糖",
+                data: tmp4.map(it => it.W)
+            }
+        ]
     }
     plot4.setOption(opt4)
+
+    
 
     let plot5 = echarts.init(k5.value)
     let opt5 = {
