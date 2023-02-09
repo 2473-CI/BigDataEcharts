@@ -166,7 +166,9 @@ onMounted(async() => {
         return flag.map(f => {  // 方式
             let arr = data.filter(d => d["State/UT"] == state) // 过滤后的数组
             let sum = 0
+            
             // arr.map(it => it[f]).forEach(el => {
+            //     console.log(el)
             //     sum += Number(el["Number of Households surveyed"]) * Number(el[f])
             // })
             arr.forEach((el, index) => { // 数据
@@ -231,6 +233,7 @@ onMounted(async() => {
             }
         ]
     }
+    console.log(plot3)
     plot3.setOption(opt3)
 
 
