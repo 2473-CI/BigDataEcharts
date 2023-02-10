@@ -41,8 +41,8 @@ onMounted(async() => {
     await axios.post("/api/war", {"Country":"Russia"}).then(res => data = res.data)
 
 
-    let sb = Object.keys(data[0]).filter(sb => sb!="date" || sb!="day" || sb!="greatest losses direction" || sb!="MRL")
-    console.log
+    let sb = Object.keys(data[0]).filter(sb => sb!="date" && sb!="day" && sb!="greatest losses direction" && sb!="MRL")
+    console.log(sb)
     let plot1 = echarts.init(k1.value)
     let opt1 = {
         title: {
@@ -77,7 +77,6 @@ onMounted(async() => {
         })
     }
     plot1.setOption(opt1)
-    console.log(k1)
 
     let arr = []
     data.map(it => arr.push(... it["greatest losses direction"].replaceAll("and", " ").replaceAll(",", " ").split(" ").filter(it => it!='')))
@@ -98,9 +97,81 @@ onMounted(async() => {
     }
     plot2.setOption(opt2)
 
+    function delStr(ob1, ob2){
+        let ob = {...ob2}
+        sb.forEach(name => ob[name] = Number(ob2[name])==NaN ? 0 : (Number(ob1[name])==NaN?Number(ob2[name]): (Number(ob2[name]) - Number(ob1[name])<0?0:Number(ob2[name]) - Number(ob1[name]) )   ) )
+        // ob["date"] = ob2["date"]
+        return ob
+    }
+    
+    let tmp = []
+    let checkData = data.map(o => {return {...o, m: o.date.slice(0, 7), d: Number(o.date.slice(8, 10))}})
+    let SetData = [...new Set(checkData.map(o=>o.m))].map(m=>checkData.filter(o=>o.m==m).sort((o1,o2)=>o2.d-o1.d)[0])
+    SetData.forEach((el, index)=>{
+        tmp.push(index==0?el:delStr(data.filter(o=>o.date==[SetData[index-1].m+"-"+SetData[index-1].d])[0], data.filter(o=>o.date==el.date)[0]))
+    })
+   console.log(tmp)
+    
+    let plot3 = echarts.init(k3.value)
+    let opt3 = {
+        title: {
+            text: "陆、海、空设施每月损失情况"
+        },
+        legend: {
+            data: sb,
+        },
+        xAxis: {data: tmp.map(o=>o.date.slice(0, 7))},
+        yAxis: {},
+        series: sb.map(name => {
+            return {
+                type: "bar",
+                stack: "a",
+                name: name,
+                data: tmp.map(o=>o[name]),
+            }
+        }),
+        tooltip: {
+            trigger: "axis"
+        }
+    }
 
 
-    console.log(data)
+    plot3.setOption(opt3)
+
+    let plot4 = echarts.init(k4.value)
+    
+    let tmp4 = sb.map(name => {
+        return {
+            name: name,
+            value: Number(data[data.length - 1][name]) == NaN ? 0 : Number(data[data.length - 1][name])
+        }
+    }).sort((o1, o2) => o1.value - o2.value).filter(o => o.value!=0)
+
+    console.log(tmp4)
+
+    let opt4 = {
+        title: {
+            text: "各设施总损失情况排名",
+        },
+        xAxis: {},
+        yAxis: {data: tmp4.map(o=>o.name)},
+        series: [
+            {
+                type: "bar",
+                data: tmp4.map(o=>o.value),
+                label: {
+                    show: true,
+                    position: "right"
+                }
+            }
+        ]
+    }
+    plot4.setOption(opt4)
+    
+    console.log(tmp.map(o => {
+                return { name: o["date"], value: [ o["aircraft"], o["helicopter"], o["drone"], o["anti-aircraft warfare"], o["cruise missiles"] ] }
+            }))
+    
     let legend=["01","02"] // 月
     let plot5 = echarts.init(k5.value)
     let opt5={
@@ -119,6 +190,7 @@ onMounted(async() => {
         },
         radar:{
             indicator:[
+                {name: "飞机"},
                 {name: "直升机"},
                 {name: "无人机"},
                 {name: "防空设备"},
@@ -127,10 +199,13 @@ onMounted(async() => {
         },
         series:[{
             type:"radar",
-            data:[
-                {name:"01",value:[10,20,30,40]},
-                {name:"02",value:[20,30,10,50]} //月 直升机的值,无人机的值……
-            ]
+            data: tmp.map(o => {
+                return { name: o["date"], value: [ o["aircraft"], o["helicopter"], o["drone"], o["anti-aircraft warfare"], o["cruise missiles"] ].map(o => Number(o)==NaN?0:Number(o) ) }
+            })
+            // [
+            //     {name:"01",value:[10,20,30,40]},
+            //     {name:"02",value:[20,30,10,50]} //月 直升机的值,无人机的值……
+            // ]
         }]
 
         

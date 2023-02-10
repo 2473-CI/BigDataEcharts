@@ -5,11 +5,11 @@
         <h6>
             1.逐年枪击事件的死亡人数和受伤人数对比（柱状图）
         </h6>
-        <div class="char" ref="k1" style="height: 1000px"></div>
+        <div class="char" ref="k1" ></div>
         <h6>
             2.各大洲在过去5年中的死亡人数和受伤人数统计（双饼图）
         </h6>
-        <div class="char" ref="k2"></div>
+        <div class="char" ref="k2" style="height:1000px"></div>
         <h6>
            3.统计发生枪击事件最多的州Top10 （条形图）
         </h6>
@@ -40,11 +40,77 @@ let data = []
 
 onMounted(async() => {
     await axios.get("/api/shoot").then(res => data = res.data)
+    data = data.map(o => {return {...o, M: o.Date.slice(3, 10), Y: o.Date.slice(6, 10), Dead: Number(o.Dead), Injured: Number(o.Injured), Total: Number(o.Total)}})
+
     console.log(data)
 
+    let State = [...new Set(data.map(o=>o.State))]
 
+    let tmp1 = [...new Set(data.map(o=>o.Y))].map(year => {
+        let ob = {Dead: 0, Injured: 0, year: year}
+        data.filter(o=>o.Y==year).forEach(el => {ob.Dead += el.Dead; ob.Injured += el.Injured} )
+        return ob
+    })
+
+    let plot1 = echarts.init(k1.value)
+    let opt1 = {
+        title: {
+            text: "逐年枪击事件的死亡人数和受伤人数对比"
+        },
+        xAxis: {data: tmp1.map(o=>o.year)},
+        yAxis: {},
+        legend: {
+            data: ["死亡人数", "受伤人数"]
+        },
+        series: [
+            {
+                name: "死亡人数",
+                type: "bar",
+                data: tmp1.map(o => o.Dead)
+            },
+            {
+                name: "受伤人数",
+                type: "bar",
+                data: tmp1.map(o => o.Injured)
+            }
+        ]
+    }
+    plot1.setOption(opt1)
+
+    let plot2 = echarts.init(k2.value)
+    
+    let tmp2 = State.map(state => {
+        let ob = {Dead: 0, Injured: 0, State: state}
+        data.filter(o=>o.State==state).forEach(el => {ob.Dead += el.Dead; ob.Injured += el.Injured} )
+        return ob
+    })
+    console.log(tmp2)
+    let opt2 = {
+        title: {
+            text: "各大洲在过去5年中的死亡人数和受伤人数统计"
+        },
+        series: [
+            {
+                type: "pie",
+                data: tmp2.map(o=> {return {name: o.State, value: o.Dead}}),
+                center: ["50%", "30%"],
+                radius: ["0", "50%"]
+            },
+            {
+                type: "pie",
+                data: tmp2.map(o=> {return {name: o.State, value: o.Injured}}),
+                center: ["50%", "70%"],
+                radius: ["0", "50%"]
+            },
+        ]
+    }
+    plot2.setOption(opt2)
+
+    let plot3 = echarts.init(k3.value)
+    plot3.setOption(opt3)
 
     let State_5=["Illinois", "California", "Texas", "Florida", "Pennsylvania"]
+
     let title_5=[], singleAxis_5=[], series_5=[],month=[]
     let tmp5 = State_5.map(state => {
         let num={}
@@ -96,8 +162,7 @@ onMounted(async() => {
         singleAxis:singleAxis_5,
         series:series_5
 
-    }
-    console.log(opt5)
+    }    
     plot5.setOption(opt5)
 
 })
