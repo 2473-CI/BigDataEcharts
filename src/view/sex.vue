@@ -31,7 +31,7 @@ function getAge(ob){
 }
 
 onMounted(async() => {
-    await axios.get("http://192.168.10.109:8999/Sex").then(res => data = res.data)
+    await axios.get("/api/Sex").then(res => data = res.data)
 
     for(let i = 0; i < 100; i++) ages.push(i)
 

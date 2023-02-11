@@ -140,8 +140,25 @@
             <div style="padding: 14px">
                 <span>自由美利坚，枪战每一天</span>
                 <div class="bottom">
-                <time class="time">2023/02/09</time>
+                <time class="time">2023/02/10</time>
                 <el-button text class="button" @click="this.$router.push('/shoot')">查看</el-button>
+                </div>
+            </div>
+            </el-card>
+        </div>
+
+
+        <div class="box">
+            <el-card  shadow="hover" :body-style="{ padding: '0px' }">
+            <img
+                src="https://tse2-mm.cn.bing.net/th/id/OIP-C.kWnFtaohc-UEHXt-ljDk1gHaE8?pid=ImgDet&rs=1"
+                class="image"
+            />
+            <div style="padding: 14px">
+                <span>全球艾滋死亡情况统计</span>
+                <div class="bottom">
+                <time class="time">2023/02/11</time>
+                <el-button text class="button" @click="this.$router.push('/AIDS')">查看</el-button>
                 </div>
             </div>
             </el-card>

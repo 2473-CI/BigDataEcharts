@@ -84,7 +84,6 @@ onMounted(async() => {
         data.filter(o=>o.State==state).forEach(el => {ob.Dead += el.Dead; ob.Injured += el.Injured} )
         return ob
     })
-    console.log(tmp2)
     let opt2 = {
         title: {
             text: "各大洲在过去5年中的死亡人数和受伤人数统计"
@@ -106,8 +105,61 @@ onMounted(async() => {
     }
     plot2.setOption(opt2)
 
+    let tmp3 = State.map(state => {return {name: state, value: data.filter(o=>o.State==state).length} }).sort((o1, o2) => o2.value-o1.value).slice(0, 10).reverse()
+
     let plot3 = echarts.init(k3.value)
+    let opt3 = {
+        title: {
+            text: "统计发生枪击事件最多的州Top10"
+        },
+        xAxis: {},
+        yAxis: {data: tmp3.map(o=>o.name)},
+        series: [
+            {
+                type: "bar",
+                data: tmp3.map(o=>o.value),
+                label: {
+                    show: true
+                }
+            }
+        ]
+    }
     plot3.setOption(opt3)
+
+    let tmp4 = {}
+    for(let year = 2018; year <= 2022; year++){
+        tmp4[year] = []
+        for(let month = 1; month <= 12; month++){
+            let M = (month<10?"0"+month:month)+"/"+year
+            let Total = 0
+            let Dead = 0
+            data.filter(o=>o.M==M).forEach(el => {Total+=el.Total; Dead+=el.Dead})
+            tmp4[year].push(Dead/Total)
+        }
+    }
+    console.log(tmp4)
+
+    let plot4 = echarts.init(k4.value)
+    let opt4 = {
+        title: {
+            text: "统计美国每月枪击事件的死亡比",
+        },
+        xAxis: {
+            data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11 ,12]
+        },
+        legend: {
+            data: Object.keys(tmp4)
+        },
+        yAxis: {},
+        series: Object.keys(tmp4).map((year, index)=> {
+            return {
+                type: "line",
+                name: year,
+                data: tmp4[year]
+            }
+        })
+    }
+    plot4.setOption(opt4)
 
     let State_5=["Illinois", "California", "Texas", "Florida", "Pennsylvania"]
 

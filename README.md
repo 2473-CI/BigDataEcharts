@@ -598,6 +598,30 @@ curl --location --request GET 'http://192.168.10.109:8999/shoot'
 ```
 
 
+### 
+### 全球艾滋死亡情况
+
+#### 接口地址
+
+```
+curl --location --request GET 'http://cn-hk-nf-3.natfrp.cloud:61322/shoot'
+```
+
+#### 接口数据
+```json
+[
+    {
+        "15-49": "15",  
+        "5-14": "0",
+        "50-69": "7",
+        "70+": "1",
+        "Codecountry": "AFG",
+        "Country": "Afghanistan",
+        "Under 5": "10",
+        "Year": "1990"
+    },
+]
+```
 
 
 

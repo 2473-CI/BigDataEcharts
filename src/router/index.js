@@ -9,6 +9,7 @@ import sex from '@/view/sex'
 import keep from '@/view/keep'
 import war from '@/view/war'
 import shoot from '@/view/shoot'
+import AIDS from '@/view/aids'
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -51,6 +52,10 @@ const router = createRouter({
         { 
             path: '/shoot',
             component: shoot 
+        },
+        { 
+            path: '/AIDS',
+            component: AIDS 
         },
       ]
   })
