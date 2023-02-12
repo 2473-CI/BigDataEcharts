@@ -604,32 +604,57 @@ curl --location --request GET 'http://192.168.10.109:8999/shoot'
 #### 接口地址
 
 ```
-curl --location --request GET 'http://cn-hk-nf-3.natfrp.cloud:61322/shoot'
+curl --location --request GET 'http://cn-hk-nf-3.natfrp.cloud:61322/AIDS'
 ```
 
 #### 接口数据
 ```json
 [
     {
-        "15-49": "15",  
-        "5-14": "0",
-        "50-69": "7",
-        "70+": "1",
+        "15-49": "15",   15-49岁间的死亡人数
+        "5-14": "0",       5-14岁间的死亡人数
+        "50-69": "7",   50-69岁间的死亡人数
+        "70+": "1",     70+岁间的死亡人数
         "Codecountry": "AFG",
         "Country": "Afghanistan",
-        "Under 5": "10",
-        "Year": "1990"
+        "Under 5": "10",   小于5岁间死于艾滋
+        "Year": "1990"  
     },
 ]
 ```
 
 
+### 
+### Github相关数据分析
 
+#### 接口地址
 
-
-
-
-
-
-
+```
+curl --location --request GET 'http://cn-hk-nf-3.natfrp.cloud:61322/Github'
+```
+```json
+{
+  "owner": "pelmers", 所有者
+  "name": "text-rewriter",  名字
+  "stars": 11,
+  "forks": 4,
+  "watchers": 3,
+  "isFork": false,
+  "isArchived": false,
+  "languages": [ { "name": "JavaScript", "size": 21769 }, { "name": "HTML", "size": 2096 }, { "name": "CSS", "size": 2081 } ],  编程语言
+  "diskUsageKb": 75,  项目大小
+  "pullRequests": 4,  拉取请求次数
+  "description": "Webextension to rewrite phrases in pages",  描述
+  "primaryLanguage": "JavaScript",  主要语言
+  "createdAt": "2015-03-14T22:35:11Z",  创建于
+  "pushedAt": "2022-02-11T14:26:00Z", 推在
+  "defaultBranchCommitCount": 54, 默认分支提交计数
+  "license": null, 许可证
+  "assignableUserCount": 1,  可分配用户计数
+  "codeOfConduct": null,  行为准则
+  "forkingAllowed": true,
+  "nameWithOwner": "pelmers/text-rewriter",  名称与所有者
+  "parent": null
+}
+```
 

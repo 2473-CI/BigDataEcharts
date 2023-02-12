@@ -10,6 +10,7 @@ import keep from '@/view/keep'
 import war from '@/view/war'
 import shoot from '@/view/shoot'
 import AIDS from '@/view/aids'
+import Github from '@/view/github'
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -56,6 +57,10 @@ const router = createRouter({
         { 
             path: '/AIDS',
             component: AIDS 
+        },
+        { 
+            path: '/Github',
+            component: Github 
         },
       ]
   })
