@@ -21,6 +21,7 @@
 <script setup>
 import axios from 'axios'
 import {onMounted, ref} from 'vue'
+// import func from 'vue-temp/vue-editor-bridge'
 const echarts = require("echarts")
 const r1 = ref("r1")
 const r2 = ref("r2")
@@ -56,12 +57,6 @@ onMounted(async()=>{
         return o2.value-o1.value
     }).slice(0, 20)
 
-    console.log(tmp1)
-
-
-
-
-
     let plot1 = echarts.init(r1.value)
     let opt1 = {
         title: {
@@ -86,7 +81,6 @@ onMounted(async()=>{
         })
         return {name: y, value: sum}
     }).sort((o1, o2)=>Number(o2.Year)-Number(o2.Year))
-    console.log(tmp2)
     let plot2 = echarts.init(r2.value)
     let opt2 = {
         title: {
@@ -135,7 +129,6 @@ onMounted(async()=>{
         })
     }
 
-    console.log(opt3)
     plot3.setOption(opt3)
 
     let plot4 = echarts.init(r4.value)
@@ -144,7 +137,6 @@ onMounted(async()=>{
     data.forEach(element=>{
         if(!years.includes(element["Year"])) years.push(element["Year"])
     })
-    // console.log(years)
     Country.forEach(function(element, idx){
         title_4.push({
             text:element,
@@ -161,11 +153,28 @@ onMounted(async()=>{
         series_4.push({
             singleAxisIndex:idx,
             coordinateSystem:"singleAxis",
-            data:[["1992",2]],
+            data:[],
             symbolSize:function(dataItem){
-                return 5
-            },
+                if(dataItem[1]>2 * 10**4){
+                    return dataItem[1] / 350
+                }else if(dataItem[1]>3 * 10**3){
+                    return dataItem[1] / 150
+                }else{
+                    return dataItem[1] / 10
+                }
+0            },
             type:"scatter"
+        })
+    });
+
+
+    console.log("ser", series_4)
+    series_4.forEach((el, idx) => {
+        year.forEach((y, i) => {
+            let sum = 0
+            let item = NumData.filter(o=> o.Country==Country[idx] && o.Year==y )[0]
+            sum += (item["Under 5"] + item["5-14"] + item["15-49"] + item["50-69"] + item["70+"])
+            el["data"].push([y, sum])
         })
     });
 
@@ -177,10 +186,10 @@ onMounted(async()=>{
         singleAxis:singleAxis_4,
         series:series_4
     }
-    plot4.setOption(opt4)
     console.log(opt4)
+    plot4.setOption(opt4)
 
-    let age=["5-14", "15-49", "50-69", "70+"],indicator=[]
+    let age=["Under 5", "5-14", "15-49", "50-69", "70+"],indicator=[]
     Country.forEach(element=>{ indicator.push({name: element})})
     let plot5= echarts.init(r5.value)
     let opt5={
@@ -195,14 +204,22 @@ onMounted(async()=>{
         },
         series:[{
             type:"radar",
-            data:[
-                {name: "5-14",value:[23,12,67,100]},
-                {name: "15-49",value:[]},
-                {name: "50-69",value:[]},
-                {name: "70+",value:[]}
-                ]
+            data: age.map(a => {
+                return {
+                    name: a,
+                    value: Country.map(c => {
+                        let sum = 0
+                        console.log(NumData.filter(o=>o.Country == c))
+                        NumData.filter(o=>o.Country == c).forEach(o => {
+                            sum += o[a]
+                        })
+                        return sum
+                    })
+                }
+            })
         }]
     }
+    console.log(opt5)
     plot5.setOption(opt5)
 })
 
