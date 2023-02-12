@@ -630,7 +630,7 @@ curl --location --request GET 'http://cn-hk-nf-3.natfrp.cloud:61322/AIDS'
 #### 接口地址
 
 ```
-curl --location --request GET 'http://cn-hk-nf-3.natfrp.cloud:61322/Github'
+curl --location --request POST 'http://cn-hk-nf-3.natfrp.cloud:61322/GitHub'
 ```
 ```json
 {
