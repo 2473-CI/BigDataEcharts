@@ -630,7 +630,9 @@ curl --location --request GET 'http://cn-hk-nf-3.natfrp.cloud:61322/AIDS'
 #### 接口地址
 
 ```
-curl --location --request POST 'http://cn-hk-nf-3.natfrp.cloud:61322/GitHub'
+curl --location --request POST 'http://192.168.10.109:8999/GitHub' \
+--header 'Content-Type: text/plain' \
+--data-raw '{"year":["2019","2020","2021","2022","2023"],"primaryLanguage":[],"need":["createdAt","stars"]}'
 ```
 ```json
 {
@@ -656,5 +658,33 @@ curl --location --request POST 'http://cn-hk-nf-3.natfrp.cloud:61322/GitHub'
   "nameWithOwner": "pelmers/text-rewriter",  名称与所有者
   "parent": null
 }
+```
+
+### 
+### 谋杀原因分析
+
+#### 接口地址
+
+```
+curl --location --request GET 'http://192.168.10.109:8999/Murder'
+```
+```json
+  {
+    "Casteism": "1", 种族歧视
+    "Class Conflict": "2",  阶级冲突
+    "Communalism": "1",  社区主义
+    "Dowry": "96",  彩礼嫁妆
+    "Gain": "122",  物品获得
+    "Love Affairs/ Sexual relations": "355",  爱情/性
+    "Lunacy": "7",  精神病
+    "Other Causes": "1348",  其他原因
+    "Personal Vendetta or Enemity": "332", 仇恨
+    "Political Reasons": "39",  政治原因
+    "Property Dispute": "159",  财产纠纷
+    "STATE": "ANDHRA PRADESH",  州
+    "Terrorists/ Extremists": "120",  恐怖分子
+    "Witchcraft": "20",  巫术
+    "YEAR": "2001"
+  },
 ```
 

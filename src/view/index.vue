@@ -179,6 +179,27 @@
             </div>
             </el-card>
         </div>
+
+
+        <div class="box">
+            <el-card  shadow="hover" :body-style="{ padding: '0px' }">
+            <img
+                src="@/assets/Murder.jpg"
+                class="image"
+            />
+            <div style="padding: 14px">
+                <span>谋杀原因分析</span>
+                <div class="bottom">
+                <time class="time">2023/02/14</time>
+                <el-button text class="button" @click="this.$router.push('/Murder')">查看</el-button>
+                </div>
+            </div>
+            </el-card>
+        </div>
+
+
+
+
     </div>
 </template>
 

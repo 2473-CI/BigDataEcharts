@@ -37,7 +37,7 @@ const k3 = ref("k3")
 const k4 = ref("k4")
 const k5 = ref("k5")
 
-let pre = 'http://192.168.10.109:8999'
+let pre = '/api'
 
 onMounted(async() => {
     let data = []
