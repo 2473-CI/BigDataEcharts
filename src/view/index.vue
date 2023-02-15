@@ -188,7 +188,7 @@
                 class="image"
             />
             <div style="padding: 14px">
-                <span>谋杀原因分析</span>
+                <span>谋杀的原因</span>
                 <div class="bottom">
                 <time class="time">2023/02/14</time>
                 <el-button text class="button" @click="this.$router.push('/Murder')">查看</el-button>

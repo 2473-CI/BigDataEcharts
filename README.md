@@ -688,3 +688,30 @@ curl --location --request GET 'http://192.168.10.109:8999/Murder'
   },
 ```
 
+### 
+### 谋杀原因分析
+
+#### 接口地址
+
+```
+curl --location --request GET 'http://192.168.10.108:8999/NorthAmericaBearKillings'
+```
+```json
+    {
+        "Date": "2017-06-19",  时间
+        "Description": "Johnson, a contract employee for Pogo Mine, was killed while collecting soil samples. The bear was shot and killed by mine personnel.[7][8]", 案发过程
+        "Grizzly": "0", 灰 熊
+        "Hikers": "0", 徒步 旅行 者
+        "Hunter": "0", 猎人
+        "Location": "Pogo mine, Alaska", 位置
+        "Month": "6", 月
+        "Name": "Erin Johnson", 名字
+        "Only one killed": "1", 只有一人死亡
+        "Type": "Wild", 类型
+        "Type of bear": "Black bear", 熊的类型
+        "Year": "2017", 年
+        "age": "27", 年龄
+        "gender": "female" 性
+    },
+```
+
