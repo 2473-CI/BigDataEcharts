@@ -197,6 +197,21 @@
             </el-card>
         </div>
 
+        <div class="box">
+            <el-card  shadow="hover" :body-style="{ padding: '0px' }">
+            <img
+                src="https://ts1.cn.mm.bing.net/th/id/R-C.6337b346ba3b13aeffb9d0570d726a60?rik=sB0LLMhDRSZ6%2fA&riu=http%3a%2f%2fb.zol-img.com.cn%2fdesk%2fbizhi%2fimage%2f6%2f960x600%2f1424829104965.jpg&ehk=wVuZXSkQrJCTE7wpQy9VttIg3HNslk1so6oqCh%2fhypk%3d&risl=&pid=ImgRaw&r=0"
+                class="image"
+            />
+            <div style="padding: 14px">
+                <span>熊出没</span>
+                <div class="bottom">
+                <time class="time">2023/02/14</time>
+                <el-button text class="button" @click="this.$router.push('/Bear')">查看</el-button>
+                </div>
+            </div>
+            </el-card>
+        </div>
 
 
 

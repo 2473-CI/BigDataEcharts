@@ -12,6 +12,7 @@ import shoot from '@/view/shoot'
 import AIDS from '@/view/aids'
 import Github from '@/view/github'
 import Murder from '@/view/murder'
+import Bear from '@/view/bear'
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -66,6 +67,10 @@ const router = createRouter({
         { 
             path: '/Murder',
             component: Murder 
+        },
+        { 
+            path: '/Bear',
+            component: Bear 
         },
       ]
   })
