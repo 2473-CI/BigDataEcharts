@@ -13,6 +13,11 @@ import AIDS from '@/view/aids'
 import Github from '@/view/github'
 import Murder from '@/view/murder'
 import Bear from '@/view/bear'
+import EarthQuakes from '@/view/earthQuakes'
+import Gold from '@/view/gold'
+import Cat from '@/view/cat'
+import Stream from '@/view/stream'
+import Gpu from '@/view/gpu'
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -71,6 +76,26 @@ const router = createRouter({
         { 
             path: '/Bear',
             component: Bear 
+        },
+        { 
+            path: '/EarthQuakes',
+            component: EarthQuakes 
+        },
+        { 
+            path: '/Gold',
+            component: Gold 
+        },
+        { 
+            path: '/Cat',
+            component: Cat 
+        },
+        { 
+            path: '/Stream',
+            component: Stream 
+        },
+        { 
+            path: '/Gpu',
+            component: Gpu 
         },
       ]
   })

@@ -737,3 +737,104 @@ curl --location --request GET 'http://192.168.10.109:8999/EarthQuakes'
 
 ```
 
+
+### 
+### 过去5千天黄金的走势
+#### 接口地址
+
+```
+curl --location --request GET 'http://192.168.10.109:8999/Gold'
+```
+```json
+    {
+        "Close": "283.7", 闭盘价格
+        "Currency": "USD", 货币单位
+        "Date": "2000-01-04", 日期
+        "High": "289.5", 最高价格
+        "Low": "280.0", 最低价格
+        "Open": "289.5", 开盘价格
+        "Volume": "21621" 最大容量
+    },
+
+```
+
+### 
+### 猫的习性
+#### 接口地址
+
+```
+curl --location --request GET 'http://192.168.10.109:8999/cat?study-name=猫的品种'
+品种包括：["Australia","NewZealand","Kingdom","UnitedStates"]
+```
+```json
+{
+    "algorithm-marked-outlier": "", 
+    "event-id": "238898622",  事件标识
+    "ground-speed": "0", 地面速度
+    "height-above-ellipsoid": "6.089904", 椭圆体上方的高度
+    "location-lat": "35.790443", 纬度
+    "location-long": "-78.647598", 精度
+    "manually-marked-outlier": "", 
+    "sensor-type": "gps",  定位装置
+    "study-name": "Pet Cats United States",  猫的品种
+    "timestamp": "05:13.0", 时间
+    "visible": "TRUE" 可见性
+  }, 
+
+```
+
+### 
+### Stream上的游戏
+#### 接口地址
+
+```
+curl --location --request GET 'http://192.168.10.109:8999/stream'
+```
+```json
+    {
+        "app_id": "11190",
+        "date_release": "2009-12-23", 发售日期
+        "discount": "0.0", 折扣 
+        "positive_ratio": "78", 正比率
+        "price_discounted": "9.99", 价格折扣
+        "price_final": "9.99", 最终价格
+        "price_original": "9.99", 原价
+        "rating": "Mostly Positive", 游戏类型
+        "steam_deck": "true", stream商场发售
+        "title": "Sherlock Holmes versus Jack the Ripper", 标题
+        "user_reviews": "792", 用户评论
+        "win": "true", 是否支持windows
+        "mac": "false", 是否支持 mac
+        "linux": "false", 是否支持Linux
+    },
+
+```
+
+### 
+### 显卡性能对比
+#### 接口地址
+
+```
+curl --location --request GET 'http://192.168.10.109:8999/gpu'
+```
+```json
+    {
+        "bus": "PCIe 4.0 x16",
+        "gpuChip": "AD106",
+        "gpuClock": "1925",
+        "igp": "No", 是否是集成显卡
+        "manufacturer": "NVIDIA",
+        "memBusWidth": "128",
+        "memClock": "2250",
+        "memSize": "8",
+        "memType": "GDDR6",
+        "pixelShader": "",
+        "productName": "GeForce RTX 4050",
+        "releaseYear": "2023",
+        "rop": "48",
+        "tmu": "120",
+        "unifiedShader": "3840",
+        "vertexShader": ""
+    },
+
+```

@@ -213,7 +213,88 @@
             </el-card>
         </div>
 
+        <div class="box">
+            <el-card  shadow="hover" :body-style="{ padding: '0px' }">
+            <img
+                src="https://ts1.cn.mm.bing.net/th/id/R-C.e1fd1639f530ce121e0f886d75485d8e?rik=RYsHVyKk5UnAiw&riu=http%3a%2f%2fimg95.699pic.com%2fphoto%2f40148%2f1981.jpg_wh860.jpg&ehk=ToeT1IsbC9wArCxb7uBQ4yAm%2bUTrXXlkCh0lytgI8T0%3d&risl=&pid=ImgRaw&r=0"
+                class="image"
+            />
+            <div style="padding: 14px">
+                <span>日本地震啦</span>
+                <div class="bottom">
+                <time class="time">2023/02/17</time>
+                <el-button text class="button" @click="this.$router.push('/EarthQuakes')">查看</el-button>
+                </div>
+            </div>
+            </el-card>
+        </div>
 
+
+        <div class="box">
+            <el-card  shadow="hover" :body-style="{ padding: '0px' }">
+            <img
+                src="https://n.sinaimg.cn/translate/600/w1920h1080/20180416/wEvC-fzcyxmv5958389.jpg"
+                class="image"
+            />
+            <div style="padding: 14px">
+                <span>你会屯黄金嘛？</span>
+                <div class="bottom">
+                <time class="time">2023/02/17</time>
+                <el-button text class="button" @click="this.$router.push('/gold')">查看</el-button>
+                </div>
+            </div>
+            </el-card>
+        </div>
+
+
+
+        <div class="box">
+            <el-card  shadow="hover" :body-style="{ padding: '0px' }">
+            <img
+                src="@/assets/cat.jpg"
+                class="image"
+            />
+            <div style="padding: 14px">
+                <span>猫咪的习性</span>
+                <div class="bottom">
+                <time class="time">2023/02/17</time>
+                <el-button text class="button" @click="this.$router.push('/Cat')">查看</el-button>
+                </div>
+            </div>
+            </el-card>
+        </div>
+
+        <div class="box">
+            <el-card  shadow="hover" :body-style="{ padding: '0px' }">
+            <img
+                src="https://tse1-mm.cn.bing.net/th/id/OIP-C.tlblLfBfmZrJaha2DQaKhwHaEI?pid=ImgDet&rs=1"
+                class="image"
+            />
+            <div style="padding: 14px">
+                <span>Stream上的游戏</span>
+                <div class="bottom">
+                <time class="time">2023/02/17</time>
+                <el-button text class="button" @click="this.$router.push('/Stream')">查看</el-button>
+                </div>
+            </div>
+            </el-card>
+        </div>
+
+        <div class="box">
+            <el-card  shadow="hover" :body-style="{ padding: '0px' }">
+            <img
+                src="https://ts1.cn.mm.bing.net/th/id/R-C.7e59309f1e3b540bb44f27a559b7b2d7?rik=4jyO3tKS%2bUy%2bBA&riu=http%3a%2f%2fcdn.wccftech.com%2fwp-content%2fuploads%2f2015%2f02%2fAMD-Fiji-GPU-Radeon-300-Series.jpg&ehk=fc9yxtnvIbBHEsOaLOvP5L6vXmeapQvrkzm%2f9zA1WdQ%3d&risl=&pid=ImgRaw&r=0"
+                class="image"
+            />
+            <div style="padding: 14px">
+                <span>Gpu性能分析</span>
+                <div class="bottom">
+                <time class="time">2023/02/17</time>
+                <el-button text class="button" @click="this.$router.push('/Gpu')">查看</el-button>
+                </div>
+            </div>
+            </el-card>
+        </div>
 
     </div>
 </template>
