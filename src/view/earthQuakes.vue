@@ -37,7 +37,9 @@ const k3 = ref("k3")
 const k4 = ref("k4")
 const k5 = ref("k5")
 
-
+onMounted(()=>{
+    
+})
 
 
 
