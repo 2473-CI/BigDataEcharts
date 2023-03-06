@@ -838,3 +838,79 @@ curl --location --request GET 'http://192.168.10.109:8999/gpu'
     },
 
 ```
+
+### 
+### 近地天体 1900 至 2200
+#### 接口地址
+
+```
+curl --location 'http://192.168.10.118:8999/NEOBarth'
+```
+```json
+    {
+        "Date": "1900-Jan-04 22:25 ±    00:02", 最近地球接近的日期和时间
+        "Diameter": "250 m -  550 m", 已知的直径值或估计的范围（最小 - 最大）
+        "DistanceMinimum": "0.00962", 以天文单位表示的最可能（标称）近距离接近距离
+        "DistanceNominal": "0.00963",以天文单位表示的最小可能近距距离（地球中心到 NEO 中心）
+        "H(mag)": "20.2", 小行星绝对星等（一般来说，较小的 H 意味着较大的小行星直径）。未定义彗星。
+        "Object": "509352 (2007 AG)", 名称
+        "Rarity": "2", 0 表示平均频率为每年 100 次 1 对应于大约每月一次 2 到大约每年一次 3 到大约每十年一次，等等。“n/a”表示频率估计不可用。
+        "infinity(km/s)": "8.65", 近距离时物体相对于地球的速度。
+        "relative(km/s)": "8.69" 近距离接近时相对于无质量地球的物体速度。
+    },
+
+```
+> 计算中若所有字段指标为 n/a 则该条数据不参加计算
+> 1. 每年近地天体的数量情况 柱状图
+> 2. 逐年infinity 与 relative 情况对比 折线图（按年分组 取该年的平均速度 不考虑数据是否合理及是否有实际意义）
+> 3. 直径最大的天体Top10 条形图（Diameter 取平均值作为该天体直径）
+> 4. DistanceMinimum 与 DistanceNominal趋势是否一直 时间轴折线图
+> 5. H(mag)字段取整 求分布情况 南丁格尔玫瑰图
+
+
+### 
+### 美国执行死刑
+#### 接口地址
+
+```
+curl --location 'http://192.168.10.118:8999/USADeath'
+```
+```json
+    { 
+        "Country": "United States", 国家
+        "Execution Date": "1/17/77", 执行日期 月/日/年
+        "Execution Volunteer": "yes", 执行志愿者
+        "First Name": "Gary", 第一个名字
+        "Foreign National": "No",  外国国家
+        "Juvenile": "no", 少年
+        "Last Name": "Gilmore", 姓
+        "Middle Name(s)": "Mark", 中间名(s)
+        "Number of American Indian or Alaska Native Female Victims": "0", 美国印第安人或阿拉斯加土著女性受害者的人数
+        "Number of Asian Female Victims": "0", 亚洲女性受害者人数
+        "Number of Asian Male Victims": "0", 亚洲男性受害者人数
+        "Number of Black Female Victims": "0", 黑人女性受害者的数量
+        "Number of Black Male Victims": "0", 黑人男性受害者的数量
+        "Number of Latino Female Victims": "0",  拉丁裔女性受害者人数
+        "Number of Latino Male Victims": "0", 拉丁裔男性受害者人数
+        "Number of Native American Male Victims": "0", 印第安男性受害者的数量
+        "Number of Other Race Female Victims": "0", 其他种族女性受害者的数量
+        "Number of Other Race Male Victims": "0", 其他种族男性受害者数量
+        "Number of Victims": "1", 受害者人数
+        "Number of White Female Victims": "0", 白人女性受害者的数量 
+        "Number of White Male Victims": "1", 白人男性受害者的数量
+        "Race": "White",
+        "Region": "West", 地区
+        "Sex": "Male", 性
+        "State": "Utah", 状态
+        "Suffix": "",
+        "Victim(s) Race(s)": "White" 受害者的种族
+    },
+
+```
+> 
+> 1. 逐年死刑人数男女对比 基础柱状图 带背景色
+> 2. 各人中（Victim(s) Race(s)）死刑者数量 南丁格尔玫瑰图
+> 3. 少年死刑犯数量 饼图
+> 4. 逐年种族男女死刑人数对比 （种族包括黑人、白人、亚洲人、拉丁裔、印第安）
+> 5. 犯罪者家族Top10 条形图（求各姓氏 犯罪者人数）
+

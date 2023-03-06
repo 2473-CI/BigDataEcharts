@@ -1,6 +1,6 @@
 <template>
    <div id="box">
-        <h1>黄金的价格</h1>
+        <h1>Gpu性能分析</h1>
         <hr/>
         <h6>
            1. 各品牌逐年新品发售数量 （柱状图 叠加）
@@ -26,6 +26,7 @@
 </template>
 
 <script setup>
+
 import {onMounted, ref} from 'vue'
 const echarts = require("echarts")
 const axios = require("axios")
@@ -37,7 +38,66 @@ const k3 = ref("k3")
 const k4 = ref("k4")
 const k5 = ref("k5")
 
+onMounted(async () => {
+    await axios.get("/api/gpu").then(res => data = res.data)
 
+    console.log(data)
+
+
+    let plot2 = echarts.init(k2.value)
+    let opt2={
+        title:{
+            text:"Clock相关性"
+        },
+        xAxis:{scale:true},
+        yAxis:{scale:true},
+        series:[{
+            type:"scatter",
+            data:data.map(d=>{
+                return [Number(d.memClock), Number(d.gpuClock)]
+            })
+        }],
+        tooltip:{
+            position:"top"
+        }
+    }
+    plot2.setOption(opt2)
+
+    let legend5 = ["Radeon RX 7900 XT", "GeForce RTX 4090"]
+    let data5=[]
+    let indicator="memSize、memBusWidth、unifiedShader、tmu、rop".split("、")
+    legend5.map(product=>{
+        data5.push(data.filter(o=>o.productName==product))
+    })
+
+    let plot5 = echarts.init(k5.value)
+    let opt5={
+        title:{
+            text: 'Radeon RX 7900 XT与GeForce RTX 4090性能对比',
+            left: 'center'
+        },
+        legend:{
+            data:legend5,
+            left: "left",
+            orient: ""
+        },
+        radar:{
+            indicator:indicator.map(i=>{
+                return {name : i}
+            })
+        },
+        series:[{
+            type: 'radar',
+            data:[
+                { name: "Radeon RX 7900 XT", value:[16, 256, 768, 12288, 256]},
+                { name: "GeForce RTX 4090", value:[24, 192, 544, 17408, 384]},
+            ]
+        }]
+
+    }
+    console.log(opt5)
+    plot5.setOption(opt5)
+})
 
 
 

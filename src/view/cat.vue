@@ -30,13 +30,172 @@ import {onMounted, ref} from 'vue'
 const echarts = require("echarts")
 const axios = require("axios")
 
-let data = []
+let Australias = []
+let NewZealands = []
+let Kingdoms = []
+let UnitedStates = []
 const k1 = ref("k1")
 const k2 = ref("k2")
 const k3 = ref("k3")
 const k4 = ref("k4")
 const k5 = ref("k5")
 
+let cats = ["Australia", "NewZealands", "Kingdoms", "UnitedStates"]
+
+onMounted(async() => {
+    await axios.get("/api/cat?study-name=Australia").then(res => Australias=res.data)
+    await axios.get("/api/cat?study-name=NewZealand").then(res => NewZealands=res.data)
+    await axios.get("/api/cat?study-name=Kingdom").then(res => Kingdoms=res.data)
+    await axios.get("/api/cat?study-name=UnitedStates").then(res => UnitedStates=res.data)
+
+    let plot1 = echarts.init(k1.value)
+    plot1.setOption({
+        legend: {
+            data: ["Australia", "NewZealands", "Kingdoms", "UnitedStates"]
+        },
+        series: [
+            {
+                type: "pie",
+                data: [
+                    {name: "Australia", value: Australias.length},
+                    {name: "NewZealands", value: NewZealands.length},
+                    {name: "Kingdoms", value: Kingdoms.length},
+                    {name: "UnitedStates", value: UnitedStates.length},
+                ],
+                label: {
+                    show: "true",
+                    formatter: "{b}\n样本占比{d}%"
+                },
+                
+            }
+        ]
+    })
+
+
+    let plot2 = echarts.init(k2.value)
+    plot2.setOption({
+        xAxis: {},
+        yAxis: {},
+        legend: {
+            data: ["Australia", "NewZealands", "Kingdoms", "UnitedStates"]
+        },
+        series: [
+            {
+                type: "scatter",
+                name: "Australia",
+                data: Australias.map(raw => [raw["location-lat"], raw["location-long"]])
+            },
+            {
+                type: "scatter",
+                name: "NewZealands",
+                data: NewZealands.map(raw => [raw["location-lat"], raw["location-long"]])
+            },
+            {
+                type: "scatter",
+                name: "Kingdoms",
+                data: Kingdoms.map(raw => [raw["location-lat"], raw["location-long"]])
+            },
+            {
+                type: "scatter",
+                name: "UnitedStates",
+                data: UnitedStates.map(raw => [raw["location-lat"], raw["location-long"]])
+            }
+        ]
+    })
+
+    let tmp3 = {}
+
+    // cats.map(cat => {
+    //     tmp3[cat] = {}
+    //     tmp3[cat]["visible"] = 
+    // })
+
+    let plot3 = echarts.init(k3.value)
+    plot3.setOption({
+        xAxis: {
+            data: cats
+        },
+        legend: {
+            data: ["visible", "unvisible"]
+        },
+        yAxis: {},
+        series: [
+            {
+                type: "bar",
+                name: "visible",
+                data: [
+                    Australias.filter(raw=>raw["visible"]==="true" || (raw["visible"]==="TRUE")).length/ Australias.length,
+                    NewZealands.filter(raw=>raw["visible"]=="true" || (raw["visible"]=="TRUE")).length/ NewZealands.length,
+                    Kingdoms.filter(raw=>raw["visible"]=="true" || (raw["visible"]=="TRUE")).length/ Kingdoms.length,
+                    UnitedStates.filter(raw=>raw["visible"]=="true" || (raw["visible"]=="TRUE")).length/ UnitedStates.length
+                ]
+            },
+            {
+                type: "bar",
+                name: "unvisible",
+                data: [
+                    Australias.filter(raw=>raw["visible"]=="false" || (raw["visible"]=="FALSE")).length/ Australias.length,
+                    NewZealands.filter(raw=>raw["visible"]=="false" || (raw["visible"]=="FALSE")).length/ NewZealands.length,
+                    Kingdoms.filter(raw=>raw["visible"]=="false" || (raw["visible"]=="FALSE")).length/ Kingdoms.length,
+                    UnitedStates.filter(raw=>raw["visible"]=="false" || (raw["visible"]=="FALSE")).length/ UnitedStates.length
+                ]
+            }
+        ]
+    })
+
+    function speed(arr){
+        let sum = 0
+        arr.forEach(element => {
+            // console.log(Number(element["ground-speed"]))
+            sum += Number(element["ground-speed"])
+        });
+        console.log(sum , arr.length)
+        return sum / arr.length
+    }
+    
+    // console.log(speed(UnitedStates.filter(raw => raw["ground-speed"] != "0" || raw["ground-speed"] != "")))
+
+    let plot4 = echarts.init(k4.value)
+    plot4.setOption({
+        xAxis: {data:["Kingdoms", "UnitedStates"]},
+        yAxis: {min: 1800},
+        series: [
+            {
+                type: "bar",
+                // name: "",
+                data: [
+                    speed(Kingdoms.filter(raw => raw["ground-speed"] != "0" && raw["ground-speed"] != "")),
+                    speed(UnitedStates.filter(raw => raw["ground-speed"] != "0" && raw["ground-speed"] != ""))
+                ]
+
+            }
+        ]
+    })
+
+    function zs(arr){
+        return [...new Set(arr)].map(n=>{return{name:n, value:arr.filter(o=>o==n).length}}).sort((o1, o2) => o2.value-o1.value)[0]
+    }
+
+    let plot5 = echarts.init(k5.value)
+    plot5.setOption({
+        xAxis: {data: cats},
+        yAxis: {},
+        series: [
+            {
+                type:"line",
+                data: [
+                    zs(Australias.map(raw => raw["height-above-ellipsoid"])),
+                    zs(NewZealands.map(raw => raw["height-above-ellipsoid"])),
+                    zs(Kingdoms.map(raw => raw["height-above-ellipsoid"])),
+                    zs(UnitedStates.map(raw => raw["height-above-ellipsoid"])),
+                ]
+
+            }
+        ]
+    })
+
+
+})
 
 
 
