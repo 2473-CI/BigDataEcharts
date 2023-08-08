@@ -38,7 +38,7 @@ const k4 = ref("k4")
 const k5 = ref("k5")
 
 onMounted(async ()=>{
-    await axios.get("/api/EarthQuakes").then(res => data=res.data)
+    await axios.get(window.BaseURL+"/EarthQuakes").then(res => data=res.data)
     data = data.map(raw => {
         function d(str){
             let splitArr = str.replace("°", "′").split("′")

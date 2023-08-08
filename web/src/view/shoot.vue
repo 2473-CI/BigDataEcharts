@@ -39,7 +39,7 @@ const k5 = ref("k5")
 let data = []
 
 onMounted(async() => {
-    await axios.get("/api/shoot").then(res => data = res.data)
+    await axios.get(window.BaseURL+"/shoot").then(res => data = res.data)
     data = data.map(o => {return {...o, M: o.Date.slice(3, 10), Y: o.Date.slice(6, 10), Dead: Number(o.Dead), Injured: Number(o.Injured), Total: Number(o.Total)}})
 
     console.log(data)

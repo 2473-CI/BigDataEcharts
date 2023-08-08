@@ -41,7 +41,7 @@ const k5 = ref("k5")
 
 
 onMounted(async() => {
-    await axios.get("http://192.168.10.108:8999/NorthAmericaBearKillings").then(res => data = res.data)
+    await axios.get(window.BaseURL+"/NorthAmericaBearKillings").then(res => data = res.data)
 
     console.log("数据源", data)
     let tmp1 = [...new Set(data.map(o=>o["Type of bear"]))].map(type => { return {name:type, value: data.filter(o=>o["Type of bear"]==type).length} }).sort((o1, o2) => o1.value - o2.value)

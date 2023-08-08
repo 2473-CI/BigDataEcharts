@@ -10,7 +10,7 @@ import { getCurrentInstance } from 'vue'
 export default{
     mounted(){
 
-        fetch("/api/machine/getIndustrial")
+        fetch(window.BaseURL+"/machine/getIndustrial")
         .then(res => res.json())
         .then(res => {
             let sumMap = this.calculate(res.data)

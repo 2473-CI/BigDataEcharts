@@ -30,7 +30,7 @@ const r4 = ref("r4")
 const r5 = ref("r5")
 let data=[]
 onMounted(async()=>{
-    await axios.get("/api/AIDS").then(res=>data=res.data)
+    await axios.get(window.BaseURL+"/AIDS").then(res=>data=res.data)
     
     data = data.filter(o => o.Country!=""&&o.Country!="World")
     

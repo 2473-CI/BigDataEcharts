@@ -10,7 +10,7 @@ export default {
     mounted(){
         var headers = new Headers();
         headers.append("Content-Type", "application/json");
-        fetch("/api/dataVisualization/selectOrderInfo", {
+        fetch(window.BaseURL+"/dataVisualization/selectOrderInfo", {
             method: "POST",
             body: JSON.stringify({
                 "startTime": "2020-01-01 00:00:00",

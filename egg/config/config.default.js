@@ -18,6 +18,29 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [];
 
+   // 是否开启反向代理
+   config.proxy = true;
+
+   // 关闭安全验证
+   config.security = {
+     csrf: {
+       enable: false,
+     },
+     domainWhiteList: [],
+   };
+ 
+   config.cors = {
+     origin: "*",
+     allowMethods: "GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS",
+   };
+
+  //  config.cluster = {
+  //     listen: {
+  //       path: '',
+  //       port: 20240,
+  //       hostname: '0.0.0.0',
+  //     }
+  //   }
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',

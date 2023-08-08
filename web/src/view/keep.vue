@@ -47,7 +47,7 @@ function GB(arr, tup){
 }
 
 onMounted(async() => {
-    await axios.get("/api/keep").then(res => data = res.data)
+    await axios.get(window.BaseURL+"/keep").then(res => data = res.data)
     console.log(data)
 
     let State = [...new Set(data.map(it => it["State/UT"]))]

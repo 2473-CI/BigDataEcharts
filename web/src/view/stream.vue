@@ -38,7 +38,7 @@ const k4 = ref("k4")
 const k5 = ref("k5")
 
 onMounted(async() => {
-    await axios.get("/api/stream").then(res => data = res.data)
+    await axios.get(window.BaseURL+"/stream").then(res => data = res.data)
     console.log(data)
 
     let plot1 = echarts.init(k1.value)

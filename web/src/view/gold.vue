@@ -38,7 +38,7 @@ const k4 = ref("k4")
 const k5 = ref("k5")
 
 onMounted(async() => {
-    await axios.get("/api/Gold").then(res => data = res.data)
+    await axios.get(window.BaseURL+"/Gold").then(res => data = res.data)
     data = data.map(raw => {
         return {
             "闭盘价格": raw["Close"],

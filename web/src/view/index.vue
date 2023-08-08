@@ -164,7 +164,7 @@
             </el-card>
         </div>
 
-        <div class="box">
+        <!-- <div class="box">
             <el-card  shadow="hover" :body-style="{ padding: '0px' }">
             <img
                 src="https://lthub.ubc.ca/files/2021/06/GitHub-Logo.png"
@@ -178,7 +178,7 @@
                 </div>
             </div>
             </el-card>
-        </div>
+        </div> -->
 
 
         <div class="box">

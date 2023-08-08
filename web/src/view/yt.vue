@@ -25,7 +25,7 @@ let t5 = ref(null)
 let data = []
 
 onMounted(async () => {
-    await axios.post("/api/Youtube", {"StartRank":1,"EndRank":500}).then(res => data = res.data)
+    await axios.post(window.BaseURL+"/Youtube", {"StartRank":1,"EndRank":500}).then(res => data = res.data)
 
     let plot1 = echarts.init(t1.value)
     let CategoryObj = {}

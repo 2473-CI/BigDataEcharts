@@ -38,7 +38,7 @@ const k4 = ref("k4")
 const k5 = ref("k5")
 
 onMounted(async() => {
-    await axios.post("/api/war", {"Country":"Russia"}).then(res => data = res.data)
+    await axios.post(window.BaseURL+"/war", {"Country":"Russia"}).then(res => data = res.data)
 
 
     let sb = Object.keys(data[0]).filter(sb => sb!="date" && sb!="day" && sb!="greatest losses direction" && sb!="MRL")

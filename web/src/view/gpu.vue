@@ -39,7 +39,7 @@ const k4 = ref("k4")
 const k5 = ref("k5")
 
 onMounted(async () => {
-    await axios.get("/api/gpu").then(res => data = res.data)
+    await axios.get(window.BaseURL+"/gpu").then(res => data = res.data)
 
     console.log(data)
 

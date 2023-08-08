@@ -8,7 +8,7 @@ import { groupCount } from '@/utils/util';
 
 export default {
     mounted(){
-        fetch("/api/dataVisualization/selectGoodsInfo", {
+        fetch(window.BaseURL+"/dataVisualization/selectGoodsInfo", {
             method: "POST",
             body: "{}",
             "Content-type": "application/json"

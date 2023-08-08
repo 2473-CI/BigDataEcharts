@@ -43,10 +43,10 @@ const k5 = ref("k5")
 let cats = ["Australia", "NewZealands", "Kingdoms", "UnitedStates"]
 
 onMounted(async() => {
-    await axios.get("/api/cat?study-name=Australia").then(res => Australias=res.data)
-    await axios.get("/api/cat?study-name=NewZealand").then(res => NewZealands=res.data)
-    await axios.get("/api/cat?study-name=Kingdom").then(res => Kingdoms=res.data)
-    await axios.get("/api/cat?study-name=UnitedStates").then(res => UnitedStates=res.data)
+    await axios.get(window.BaseURL+"/cat?study-name=Australia").then(res => Australias=res.data)
+    await axios.get(window.BaseURL+"/cat?study-name=NewZealand").then(res => NewZealands=res.data)
+    await axios.get(window.BaseURL+"/cat?study-name=Kingdom").then(res => Kingdoms=res.data)
+    await axios.get(window.BaseURL+"/cat?study-name=UnitedStates").then(res => UnitedStates=res.data)
 
     let plot1 = echarts.init(k1.value)
     plot1.setOption({

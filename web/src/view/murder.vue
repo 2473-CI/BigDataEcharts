@@ -38,7 +38,7 @@ const k4 = ref("k4")
 const k5 = ref("k5")
 
 onMounted(async() => {
-    await axios.get("/api/Murder").then(res => data = res.data.map(o=> {
+    await axios.get(window.BaseURL+"/Murder").then(res => data = res.data.map(o=> {
         return {
             "种族歧视": Number(o["Casteism"]),
             "阶级冲突": Number(o["Class Conflict"]),

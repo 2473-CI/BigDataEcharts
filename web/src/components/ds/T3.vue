@@ -10,7 +10,7 @@ export default {
     mounted(){
         var headers = new Headers();
         headers.append("Content-Type", "application/json");
-        fetch("/api/dataVisualization/selectGoodsInfo", {
+        fetch(window.BaseURL+"/dataVisualization/selectGoodsInfo", {
             method: "POST",
             body: "{}",
             headers: headers,

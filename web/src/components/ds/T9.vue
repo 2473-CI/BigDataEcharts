@@ -10,7 +10,7 @@ import {groupSum} from '@/utils/util.js'
 
 export default{
     mounted(){
-        xhrPost("/api/dataVisualization/selectOrderInfo", {"startTime":"2020-01-01 00:00:00","endTime":"2020-12-30 00:00:00"})
+        xhrPost(window.BaseURL+"/dataVisualization/selectOrderInfo", {"startTime":"2020-01-01 00:00:00","endTime":"2020-12-30 00:00:00"})
         .then((res) => {
             res = res.data
             let data = groupSum(res, "regionName", "finalTotalAmount")

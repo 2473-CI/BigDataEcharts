@@ -11,7 +11,7 @@ import { subTime, sortByTime } from '@/utils/util'
 export default{
     mounted(){
 
-        fetch("/api/machine/getIndustrial")
+        fetch(window.BaseURL+"/machine/getIndustrial")
         .then(res => res.json())
         .then(res => {
             res = this.calculate(res.data)

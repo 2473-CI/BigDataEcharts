@@ -7,7 +7,7 @@
 <script>
 export default{
     mounted(){
-        fetch("/api/machine/getIndustrial")
+        fetch(window.BaseURL+"/machine/getIndustrial")
         .then(res => res.json())
         .then(res => {
             this.init(res.data)

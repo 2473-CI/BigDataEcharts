@@ -25,7 +25,7 @@ let s6 = ref(null)
 
 let data = []
 onMounted(async () => {
-    await axios.get("/api/Student").then(res => data = res.data)
+    await axios.get(window.BaseURL+"/Student").then(res => data = res.data)
 
 
     let polt1 = echarts.init(s1.value)

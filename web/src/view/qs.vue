@@ -46,7 +46,7 @@ onMounted(()=>{
 })
 
 onMounted(async ()=> {
-    await axios.get("/api/QSWorldRankingUniversity").then((res) => {
+    await axios.get(window.BaseURL+"/QSWorldRankingUniversity").then((res) => {
         data.value = res
     })
     
