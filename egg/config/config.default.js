@@ -34,13 +34,13 @@ module.exports = appInfo => {
      allowMethods: "GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS",
    };
 
-  //  config.cluster = {
-  //     listen: {
-  //       path: '',
-  //       port: 20240,
-  //       hostname: '0.0.0.0',
-  //     }
-  //   }
+   config.cluster = {
+      listen: {
+        path: '',
+        port: 28999,
+        hostname: '0.0.0.0',
+      }
+    }
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
